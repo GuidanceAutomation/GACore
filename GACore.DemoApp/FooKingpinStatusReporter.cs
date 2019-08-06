@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace GACore.DemoApp
 {
-    public class FooKingpinStatusReporter : IKingpinStatusReporter
+    public class FooKingpinStatusReporter : IKingpinStatusReporter, INotifyPropertyChanged
     {
         private PositionControlStatus positionControlStatus = Tools.RandomEnumValue<PositionControlStatus>();
 
