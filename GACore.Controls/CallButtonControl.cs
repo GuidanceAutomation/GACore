@@ -14,12 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GACore.Controls
-{   
+{
     public class CallButtonControl : Control
     {
         public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register("IsChecked", typeof(string),
-                typeof(CallButtonControl), new PropertyMetadata(false, IsCheckedChanged));
+            DependencyProperty.Register("IsChecked", typeof(bool),
+            typeof(CallButtonControl), new PropertyMetadata(false, IsCheckedChanged));
+
         public bool IsChecked { get; set; }
 
         private static void IsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
