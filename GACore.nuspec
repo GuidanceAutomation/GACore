@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>GACore</id>
+    <version>1.0.0</version>
+    <authors>Martin Davies</authors>
+    <owners>Guidance Automation Ltd</owners>
+	<license type="expression">MIT</license>
+    <projectUrl>https://github.com/GuidanceAutomation/GACore</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core components for Guidance Automation assemblies</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags></tags>
+    <dependencies>
+	      <group targetFramework=".NETFramework4.7.2">
+		  </group>
+    </dependencies>
+  </metadata>
+  <files>
+        <file src="readme.txt" target="" />
+		<file src="GACore.DemoApp\bin\Release\GACore.dll" target="lib\net472" />
+		<file src="GACore.DemoApp\bin\Release\GACore.Controls.dll" target="lib\net472" />
+  </files>
+</package>
