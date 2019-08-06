@@ -19,7 +19,7 @@
   </metadata>
   <files>
         <file src="readme.txt" target="" />
-		<file src="GACore.DemoApp\bin\Release\GACore.dll" target="lib\net472" />
-		<file src="GACore.DemoApp\bin\Release\GACore.Controls.dll" target="lib\net472" />
+		<file src="GACore.DemoApp\bin\Release\GACore.dll" target="lib\net47" />
+		<file src="GACore.DemoApp\bin\Release\GACore.Controls.dll" target="lib\net47" />
   </files>
 </package>

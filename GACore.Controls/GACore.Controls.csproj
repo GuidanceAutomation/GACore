@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrushDictionaries.cs" />
+    <Compile Include="CallButtonControl.cs" />
     <Compile Include="Converters.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
@@ -93,6 +94,10 @@
     <Page Include="ResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

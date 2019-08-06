@@ -11,5 +11,35 @@ namespace GACore
 
             return new BrushCollection("Unknown", Brushes.Crimson, Brushes.White);
         }
+
+        private readonly static HashSet<DynamicLimiterStatus> dynamicFaultStates = new HashSet<DynamicLimiterStatus>()
+            {
+                DynamicLimiterStatus.MotorFault
+            };
+
+        private readonly static HashSet<NavigationStatus> navigationFaultStates = new HashSet<NavigationStatus>()
+            {
+                NavigationStatus.AssociationFailure,
+                NavigationStatus.HighUncertainty,
+                NavigationStatus.Lost
+            };
+
+        private readonly static HashSet<PositionControlStatus> pcsFaultStates = new HashSet<PositionControlStatus>()
+            {
+                PositionControlStatus.OutOfPosition,
+                PositionControlStatus.WaypointDiscontinuity
+            };
+
+        public static HashSet<DynamicLimiterStatus> DynamicFaultStates => dynamicFaultStates;
+
+        public static HashSet<NavigationStatus> NavigationFaultStates => navigationFaultStates;
+
+        public static HashSet<PositionControlStatus> PCSFaultStates => pcsFaultStates;
+
+        public static bool IsFault(this PositionControlStatus positionControlStatus) => PCSFaultStates.Contains(positionControlStatus);
+
+        public static bool IsFault(this NavigationStatus navigationStatus) => NavigationFaultStates.Contains(navigationStatus);
+
+        public static bool IsFault(this DynamicLimiterStatus dynamicLimiterStatus) => DynamicFaultStates.Contains(dynamicLimiterStatus);
     }
 }
