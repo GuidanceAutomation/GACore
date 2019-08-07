@@ -17,15 +17,25 @@ namespace GACore.Controls
 {
     public class CallButtonControl : Control
     {
-        public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register("IsChecked", typeof(bool),
-            typeof(CallButtonControl), new PropertyMetadata(false, IsCheckedChanged));
+        public static readonly DependencyProperty LightStateProperty =
+            DependencyProperty.Register("LightState", typeof(LightState?),
+            typeof(CallButtonControl), new PropertyMetadata(null));
 
-        public bool IsChecked { get; set; }
 
-        private static void IsCheckedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public static readonly DependencyProperty IsPressedProperty =
+            DependencyProperty.Register("IsPressed", typeof(bool?),
+            typeof(CallButtonControl), new PropertyMetadata(null));
+
+        public LightState? LightState
         {
-            ((CallButtonControl)d).IsChecked = (bool)e.NewValue;
+            get { return (LightState?)GetValue(LightStateProperty); }
+            set { SetValue(LightStateProperty, value); }
+        }
+
+        public bool? IsPressed
+        {
+            get { return (bool?)GetValue(IsPressedProperty); }
+            set { SetValue(IsPressedProperty, value); }
         }
 
         static CallButtonControl()

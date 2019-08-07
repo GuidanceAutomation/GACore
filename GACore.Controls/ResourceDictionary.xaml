@@ -2,6 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GACore.Controls"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- Converters -->
+    <local:NullableBoolStringConverter x:Key="nullableBoolStringConverter"/>
+    <local:NullableEnumStringConverter x:Key="nullableEnumStringConverter"/>
     <!-- Font Sizes-->
     <system:Double x:Key="Text">14</system:Double>
     <!-- Styles -->
@@ -14,6 +17,23 @@
         <Setter Property="Height" Value="23"/>
         <Setter Property="Width" Value="75"/>
     </Style>
+    <Style TargetType="local:CallButtonControl" BasedOn="{StaticResource BaseControlStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CallButtonControl}">
+                    <StackPanel>
+                        <StatusBar>Call Button</StatusBar>
+                        <local:LabelContentControl Header="LightState:">
+                            <TextBlock Text="{TemplateBinding Property=LightState, Converter={StaticResource nullableEnumStringConverter}}"/>
+                        </local:LabelContentControl>
+                        <local:LabelContentControl Header="IsPressed:">
+                            <TextBlock Text="{TemplateBinding Property=IsPressed, Converter={StaticResource nullableBoolStringConverter}}"/>
+                        </local:LabelContentControl>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>    
     <Style TargetType="local:LabelContentControl">
         <Setter Property="Template">
             <Setter.Value>

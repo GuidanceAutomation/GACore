@@ -12,6 +12,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <local:FooCallButton x:Key="fooCallButton"/>
             <local:FooKingpinStatusReporter x:Key="fooKingpinStatusReporter" />
         </ResourceDictionary>
     </Window.Resources>
@@ -21,6 +22,12 @@
             <gaCoreUC:LabelContentControl Header="Randomize">
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
+            <gaCoreUC:CallButtonControl 
+                IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
+            <gaCoreUC:CallButtonControl 
+                IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -16,6 +16,9 @@ namespace GACore.DemoApp
         {
             FooKingpinStatusReporter reporter = (FooKingpinStatusReporter)FindResource("fooKingpinStatusReporter");
             reporter.Randomize();
+
+            FooCallButton callButton = (FooCallButton)FindResource("fooCallButton");
+            callButton.Randomize();
         }
     }
 }
