@@ -25,7 +25,7 @@
             <gaCoreUC:CallButtonControl 
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
-            <gaCoreUC:CallButtonControl 
+            <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}" 
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
         </StackPanel>

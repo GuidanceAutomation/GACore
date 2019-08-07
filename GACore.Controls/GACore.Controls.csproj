@@ -58,6 +58,9 @@
       <DependentUpon>KingpinStatusControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LabelContentControl.cs" />
+    <Compile Include="LightStateControl.xaml.cs">
+      <DependentUpon>LightStateControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="KingpinStatusControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LightStateControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
