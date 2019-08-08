@@ -11,6 +11,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton"/>
             <local:FooKingpinStatusReporter x:Key="fooKingpinStatusReporter" />

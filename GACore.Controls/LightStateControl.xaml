@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:GACore.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Canvas Background="Transparent" x:Name="canvas"/>
+    <Canvas Background="Beige" x:Name="canvas"/>
 </UserControl>

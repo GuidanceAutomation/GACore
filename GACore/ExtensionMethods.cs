@@ -15,8 +15,9 @@ namespace GACore
 
                 case LightState.Red: return Colors.Red;
 
+                case LightState.Off:
                 default:
-                    return Colors.Transparent;
+                    return Colors.Beige;
             }
         }
 

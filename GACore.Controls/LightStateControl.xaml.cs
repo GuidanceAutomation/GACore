@@ -35,10 +35,12 @@ namespace GACore.Controls
         {
             LightStateControl lightStateControl = (LightStateControl)d;
 
+            Color target = lightStateControl.LightState.ToColor();             
+
             ColorAnimation colorChangeAnimation = new ColorAnimation();
-            colorChangeAnimation.From = Colors.White;
-            colorChangeAnimation.To = lightStateControl.LightState.ToColor();
-            colorChangeAnimation.Duration = TimeSpan.FromSeconds(2);
+            colorChangeAnimation.From = Colors.Beige;
+            colorChangeAnimation.To = target;
+            colorChangeAnimation.Duration = TimeSpan.FromSeconds(1);
             colorChangeAnimation.AutoReverse = true;
             colorChangeAnimation.RepeatBehavior = RepeatBehavior.Forever;
 
@@ -47,7 +49,7 @@ namespace GACore.Controls
             Storyboard.SetTarget(colorChangeAnimation, lightStateControl.canvas);
             Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
             CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
-            CellBackgroundChangeStory.Begin();
+            CellBackgroundChangeStory.Begin();        
         }
 
         public LightStateControl()
