@@ -24,9 +24,11 @@
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
             <gaCoreUC:CallButtonControl 
+                Alias="Call Button: Generic"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
             <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}" 
+                Alias="Call Button: Banner Q45"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
         </StackPanel>

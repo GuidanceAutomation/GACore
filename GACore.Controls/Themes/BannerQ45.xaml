@@ -8,15 +8,19 @@
     <Style x:Key="BannerQ45" TargetType="{x:Type local:CallButtonControl}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:CallButtonControl}">
+                <ControlTemplate TargetType="{x:Type local:CallButtonControl}">                    
                     <Grid  Width="300" Height="400">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Canvas x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Turquoise"
-                                    Grid.RowSpan="3">
+                        <StatusBar Grid.Row="0">
+                            <TextBlock Text="{TemplateBinding Property=Alias}"/>
+                        </StatusBar>
+                        <Canvas Grid.Row="1" Grid.RowSpan="3"
+                            x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Turquoise"                                    >
                             <local:LightStateControl LightState="{TemplateBinding Property=LightState}"
                                        Width="{Binding Path=ActualWidth, ElementName=canvas}"
                                        Height="{Binding Path=ActualHeight, ElementName=canvas}"/>
@@ -26,12 +30,11 @@
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Uniform"/>
                         </Canvas>
-                        <TextBlock Grid.Row="1"
+                        <TextBlock Grid.Row="2"
                                        Background="LightGray"
                                 Text="{TemplateBinding Property=IsPressed, Converter={StaticResource nullableBoolButtonStateStringConverter}}"
                                 TextAlignment="Center"
-                                FontWeight="Bold"
-                                FontSize="16"/>
+                                FontWeight="Bold"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -9,7 +9,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CallButtonControl}">
                     <StackPanel>
-                        <StatusBar>Call Button</StatusBar>
+                        <StatusBar>               
+                            <TextBlock Text="{TemplateBinding Property=Alias}"/>                                                   
+                        </StatusBar>
                         <local:LabelContentControl Header="LightState:">
                             <TextBlock Text="{TemplateBinding Property=LightState, Converter={StaticResource nullableEnumStringConverter}}"/>
                         </local:LabelContentControl>

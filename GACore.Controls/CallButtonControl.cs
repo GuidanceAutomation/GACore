@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GACore.Controls
 {
@@ -21,10 +9,13 @@ namespace GACore.Controls
             DependencyProperty.Register("LightState", typeof(LightState?),
             typeof(CallButtonControl), new PropertyMetadata(null));
 
-
         public static readonly DependencyProperty IsPressedProperty =
             DependencyProperty.Register("IsPressed", typeof(bool?),
             typeof(CallButtonControl), new PropertyMetadata(null));
+
+        public static readonly DependencyProperty AliasProperty =
+            DependencyProperty.Register("Alias", typeof(string),
+            typeof(CallButtonControl), new PropertyMetadata("Call Button"));
 
         public LightState? LightState
         {
@@ -36,6 +27,12 @@ namespace GACore.Controls
         {
             get { return (bool?)GetValue(IsPressedProperty); }
             set { SetValue(IsPressedProperty, value); }
+        }
+               
+        public string Alias
+        {
+            get { return (string)GetValue(AliasProperty); }
+            set { SetValue(AliasProperty, value); }
         }
 
         static CallButtonControl()
