@@ -13,7 +13,7 @@
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseControlStyle}">
         <Setter Property="Height" Value="23"/>
         <Setter Property="Width" Value="75"/>
-    </Style>
+    </Style> 
     <Style TargetType="local:LabelContentControl">
         <Setter Property="Template">
             <Setter.Value>

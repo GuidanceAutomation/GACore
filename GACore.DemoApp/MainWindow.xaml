@@ -11,7 +11,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <local:FooCallButton x:Key="fooCallButton"/>
             <local:FooKingpinStatusReporter x:Key="fooKingpinStatusReporter" />
         </ResourceDictionary>
     </Window.Resources>
@@ -21,6 +23,16 @@
             <gaCoreUC:LabelContentControl Header="Randomize">
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
+            <gaCoreUC:CallButtonControl 
+                Alias="Call Button: Generic"
+                IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
+            <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}"
+                                        Width="210"
+                                        Height="400"
+                Alias="Call Button: Banner Q45"
+                IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -5,6 +5,22 @@ namespace GACore
 {
     public static class ExtensionMethods
     {
+        public static Color ToColor(this LightState? lightState)
+        {
+            switch (lightState)
+            {
+                case LightState.Green: return Colors.Green;
+
+                case LightState.Amber: return Colors.Orange;
+
+                case LightState.Red: return Colors.Red;
+
+                case LightState.Off:
+                default:
+                    return Colors.Beige;
+            }
+        }
+
         public static BrushCollection GetBrushCollection<T>(this Dictionary<T, BrushCollection> dictionary, T key)
         {
             if (dictionary.ContainsKey(key)) return dictionary[key];
