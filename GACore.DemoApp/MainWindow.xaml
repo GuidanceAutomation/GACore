@@ -27,7 +27,9 @@
                 Alias="Call Button: Generic"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
-            <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}" 
+            <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}"
+                                        Width="210"
+                                        Height="400"
                 Alias="Call Button: Banner Q45"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
                 LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
