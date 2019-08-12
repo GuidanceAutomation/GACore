@@ -38,7 +38,7 @@ namespace GACore.Controls
             Color target = lightStateControl.LightState.ToColor();             
 
             ColorAnimation colorChangeAnimation = new ColorAnimation();
-            colorChangeAnimation.From = Colors.Beige;
+            colorChangeAnimation.From = Colors.White;
             colorChangeAnimation.To = target;
             colorChangeAnimation.Duration = TimeSpan.FromSeconds(1);
             colorChangeAnimation.AutoReverse = true;
