@@ -103,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <None Include="Resources\BannerQ45Iso_Color.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
     <Page Include="Themes\BannerQ45.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
