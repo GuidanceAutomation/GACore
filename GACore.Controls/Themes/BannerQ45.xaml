@@ -4,7 +4,6 @@
     xmlns:local="clr-namespace:GACore.Controls">
     <local:NullableBoolButtonStateStringConverter x:Key="nullableBoolButtonStateStringConverter"/>
     <local:NullableEnumStringConverter x:Key="nullableEnumStringConverter"/>
-    <BitmapImage x:Key="bannerQ45" UriSource="/GACore.Controls;component/Resources/BannerQ45.png"/>
     <Style x:Key="BannerQ45" TargetType="{x:Type local:CallButtonControl}">
         <Setter Property="Template">
             <Setter.Value>
