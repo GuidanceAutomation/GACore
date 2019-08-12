@@ -9,7 +9,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CallButtonControl}">                    
-                    <Grid  MinWidth="100" MinHeight="300">
+                    <Grid  MinWidth="200" MinHeight="300">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="2*"/>
@@ -20,19 +20,19 @@
                             <TextBlock Text="{TemplateBinding Property=Alias}"/>
                         </StatusBar>
                         <Canvas Grid.Row="1" Grid.RowSpan="3"
-                            x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Turquoise"                                    >
+                            x:Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"                                    >
                             <local:LightStateControl LightState="{TemplateBinding Property=LightState}"
                                        Width="{Binding Path=ActualWidth, ElementName=canvas}"
                                        Height="{Binding Path=ActualHeight, ElementName=canvas}"/>
-                            <Image Source="{StaticResource bannerQ45}" x:Name="q45Image"
-                                       Width="{Binding Path=ActualWidth, ElementName=canvas}"
-                                       Height="{Binding Path=ActualHeight, ElementName=canvas}"
-                                    RenderOptions.BitmapScalingMode="Fant"
-                                    Stretch="Uniform"/>
+                            <Frame Source="../Resources/BannerQ45Iso_Color.xaml"
+                                   Width="{Binding Path=ActualWidth, ElementName=canvas}"
+                                   Height="{Binding Path=ActualHeight, ElementName=canvas}"/>   
                         </Canvas>
                         <TextBlock Grid.Row="2"
                                        Background="LightGray"
                                 Text="{TemplateBinding Property=IsPressed, Converter={StaticResource nullableBoolButtonStateStringConverter}}"
+                                FontSize="18"
+                                FontWeight="Medium"
                                 TextAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>

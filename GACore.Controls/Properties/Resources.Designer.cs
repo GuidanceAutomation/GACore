@@ -61,12 +61,23 @@ namespace GACore.Controls.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!--This file is NOT compatible with Silverlight--&gt;
+        ///&lt;Viewbox xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; Stretch=&quot;Uniform&quot;&gt;
+        ///  &lt;Canvas Name=&quot;svg8&quot; Width=&quot;74.370857&quot; Height=&quot;102.32035&quot;&gt;
+        ///    &lt;Canvas.RenderTransform&gt;
+        ///      &lt;TranslateTransform X=&quot;0&quot; Y=&quot;0&quot;/&gt;
+        ///    &lt;/Canvas.RenderTransform&gt;
+        ///    &lt;Canvas.Resources/&gt;
+        ///    &lt;!--Unknown tag: sodipodi:namedview--&gt;
+        ///    &lt;!--Unknown tag: metadata--&gt;
+        ///    &lt;Canvas Name=&quot;layer1&quot;&gt;
+        ///      &lt;Canvas.RenderTransform&gt;
+        ///        &lt;T [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static System.Drawing.Bitmap BannerQ45 {
+        internal static string BannerQ45Iso_Color {
             get {
-                object obj = ResourceManager.GetObject("BannerQ45", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("BannerQ45Iso_Color", resourceCulture);
             }
         }
     }
