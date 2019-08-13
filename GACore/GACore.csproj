@@ -50,6 +50,7 @@
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IKingpinStatusReporter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SemVerData.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
