@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.2.0 (13th Aug 19)
+
+* Adds SemVerData object.
+
 v1.1.0 (12th Aug 19)
 
 * Adds Banner Q45 control
