@@ -11,13 +11,13 @@ namespace GACore
     public class SemVerData : IComparable
     {
         [DataMember]
-        public int Major { get; set; }
+        public int Major { get; set; } = -1;
 
         [DataMember]
-        public int Minor { get; set; }
+        public int Minor { get; set; } = -1;
 
         [DataMember]
-        public int Patch { get; set; }
+        public int Patch { get; set; } = -1;
 
         public SemVerData(int major, int minor, int patch)
         {

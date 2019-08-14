@@ -24,7 +24,8 @@
                     <local:LabelContentControl Header="Pos:" Foreground="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter},
                         ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                               Text="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
+                               Text="{Binding Path=PositionControlStatus,
+                               Converter={StaticResource pcsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
                                Foreground="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}}">
                         </TextBlock>
                     </local:LabelContentControl>
@@ -36,7 +37,8 @@
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
                     <local:LabelContentControl Header="Nav:" Foreground="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                   Text="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
+                                   Text="{Binding Path=NavigationStatus,
+                                   Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
                                    Foreground="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}}">
                         </TextBlock>
                     </local:LabelContentControl>
@@ -48,7 +50,8 @@
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
                     <local:LabelContentControl Header="Lim:" Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Text="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
+                                Text="{Binding Path=DynamicLimiterStatus, 
+                                Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
                                 Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}}">
                         </TextBlock>
                     </local:LabelContentControl>

@@ -8,13 +8,19 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.3.0 (14th Aug 19)
+
+* Adds KingpinStateData object.
+* Adds enum definitions for frozen and auto control.
+* Adds extension method for tick comparison.
+
 v1.2.0 (13th Aug 19)
 
 * Adds SemVerData object.
 
 v1.1.0 (12th Aug 19)
 
-* Adds Banner Q45 control
+* Adds Banner Q45 control.
 
 v1.0.0 (6th Aug 19)
 

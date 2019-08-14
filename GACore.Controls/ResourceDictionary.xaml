@@ -10,6 +10,21 @@
         <Setter Property="FontSize" Value="{StaticResource Text}" />
         <Setter Property="Margin" Value="6" />
     </Style>
+    <Style TargetType="{x:Type ContentControl}" x:Key="BaseContentControlStyle">
+        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontSize" Value="{StaticResource Text}" />
+        <Setter Property="Margin" Value="6" />
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontSize" Value="{StaticResource Text}" />
+        <Setter Property="Margin" Value="6" />
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}">
+    </Style>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseControlStyle}">
+        <Setter Property="Margin" Value="6"/>
+    </Style>
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseControlStyle}">
         <Setter Property="Height" Value="23"/>
         <Setter Property="Width" Value="75"/>

@@ -40,6 +40,37 @@ namespace GACore
     }
 
     [DataContract]
+    public enum FrozenState
+    {
+        [EnumMember]
+        Frozen = 0,
+
+        [EnumMember]
+        Unfrozen = 1
+    }
+
+
+    [DataContract]
+    public enum ExtendedDataFaultStatus : byte
+    {
+        [EnumMember]
+        OK = 0,
+
+        [EnumMember]
+        Fault = 1
+    }
+
+    [DataContract]
+    public enum AgvMode
+    {
+        [EnumMember]
+        Automatic = 1,
+
+        [EnumMember]
+        Manual = 0
+    }
+
+    [DataContract]
     public enum NavigationStatus : ushort
     {
         [EnumMember]

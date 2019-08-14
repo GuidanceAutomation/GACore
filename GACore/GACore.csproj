@@ -49,6 +49,7 @@
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IKingpinStatusReporter.cs" />
+    <Compile Include="KingpinStateData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemVerData.cs" />
     <Compile Include="Tools.cs" />
