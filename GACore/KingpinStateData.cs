@@ -9,7 +9,7 @@ namespace GACore
     /// Serializable structure to represent the 'player' data of a kingpin. 
     /// </summary>
     [DataContract]
-    public class KingpinStateData
+    public class KingpinStateData : IKingpinState
     {
         [DataMember]
         public string Alias { get; set; } = string.Empty;

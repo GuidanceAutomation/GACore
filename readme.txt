@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.3.2 (14th Aug 19)
+
+* Fixes KingpinStateData not implementing IKingpinState
+
 v1.3.1 (14th Aug 19)
 
 * Adds GACore.Architecture assembly
