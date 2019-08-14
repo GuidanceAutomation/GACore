@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <authors>Martin Davies</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
@@ -20,6 +20,7 @@
   <files>
         <file src="readme.txt" target="" />
 		<file src="GACore.DemoApp\bin\Release\GACore.dll" target="lib\net47" />
+		<file src="GACore.DemoApp\bin\Release\GACore.Architecture.dll" target="lib\net47" />
 		<file src="GACore.DemoApp\bin\Release\GACore.Controls.dll" target="lib\net47" />
   </files>
 </package>
