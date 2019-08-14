@@ -8,6 +8,12 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.3.1 (14th Aug 19)
+
+* Adds GACore.Architecture assembly
+* Moves some enums defs to GACore => GACore.Architecture
+* Adds interface definition for IKingpinState
+
 v1.3.0 (14th Aug 19)
 
 * Adds KingpinStateData object.

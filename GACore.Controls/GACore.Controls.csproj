@@ -86,6 +86,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GACore.Architecture\GACore.Architecture.csproj">
+      <Project>{f92aaf2b-ecff-43e7-a3e7-aba254e46db8}</Project>
+      <Name>GACore.Architecture</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GACore\GACore.csproj">
       <Project>{94692317-e2d2-4e43-8e50-ec3188de861a}</Project>
       <Name>GACore</Name>

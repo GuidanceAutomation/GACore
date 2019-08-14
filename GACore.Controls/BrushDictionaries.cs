@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GACore.Architecture;
+using System.Collections.Generic;
 using System.Windows.Media;
 
 namespace GACore.Controls
