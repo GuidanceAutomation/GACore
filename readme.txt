@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.4.0 (16th Aug 19)
+
+* Adds MovementType enumerators
+* Extends IKingpinState to include movement type. 
+
 v1.3.2 (14th Aug 19)
 
 * Fixes KingpinStateData not implementing IKingpinState
