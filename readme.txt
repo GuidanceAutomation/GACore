@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.5.0 (16th Aug 19)
+
+* Adds KingpinFaultSatus code to diagnoise IKingpinStates for faults.
+
 v1.4.0 (16th Aug 19)
 
 * Adds MovementType enumerators

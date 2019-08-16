@@ -27,12 +27,36 @@ namespace GACore
             }
         }
 
+        public static KingpinFaultDiagnosis Diagnose(this IKingpinState kingpinState) => new KingpinFaultDiagnosis(kingpinState);
+
         public static BrushCollection GetBrushCollection<T>(this Dictionary<T, BrushCollection> dictionary, T key)
         {
             if (dictionary.ContainsKey(key)) return dictionary[key];
 
             return new BrushCollection("Unknown", Brushes.Crimson, Brushes.White);
         }
+
+        private readonly static HashSet<ExtendedDataFaultStatus> exDataFaultStates = new HashSet<ExtendedDataFaultStatus>()
+        {
+            ExtendedDataFaultStatus.Fault
+        };
+
+        public static bool IsInFault(this IKingpinState kingpinState)
+        {
+            if (kingpinState.PositionControlStatus.IsFault()) return true;
+
+            if (kingpinState.NavigationStatus.IsFault()) return true;
+
+            if (kingpinState.DynamicLimiterStatus.IsFault()) return true;
+
+            if (kingpinState.ExtendedDataFaultStatus.IsFault()) return true;
+
+            return false;
+        }
+
+        public static bool IsFault(this ExtendedDataFaultStatus exFaultStatus) => ExDataFaultStates.Contains(exFaultStatus);
+
+        public static HashSet<ExtendedDataFaultStatus> ExDataFaultStates => exDataFaultStates;
 
         private readonly static HashSet<DynamicLimiterStatus> dynamicFaultStates = new HashSet<DynamicLimiterStatus>()
             {
