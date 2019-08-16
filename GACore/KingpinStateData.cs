@@ -18,6 +18,9 @@ namespace GACore
         public bool IsVirtual { get; set; } = false;
 
         [DataMember]
+        public MovementType CurrentMovementType { get; set; } = MovementType.Stationary;
+
+        [DataMember]
         public byte Tick { get; set; } = 0;
 
         [DataMember]

@@ -17,6 +17,8 @@ namespace GACore.Architecture
 
         float Heading { get; }
 
+        MovementType CurrentMovementType { get; }
+
         IPAddress IPAddress { get; }
 
         byte[] StateCastExtendedData { get; }

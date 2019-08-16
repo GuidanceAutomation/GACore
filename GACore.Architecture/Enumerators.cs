@@ -67,6 +67,34 @@ namespace GACore.Architecture
     }
 
     [DataContract]
+    public enum MovementType
+    {
+        [EnumMember]
+        Stationary = 0,
+
+        [EnumMember]
+        ClothoidForwards = 1,
+
+        [EnumMember]
+        ClothoidBackwards = 2,
+
+        [EnumMember]
+        ACRIP = 3, // Anti-clockwise rotate in place
+
+        [EnumMember]
+        CRIP = 4, // Clockwise rotate in place
+
+        [EnumMember]
+        StrafeLinear = 5, // WSAD
+
+        [EnumMember]
+        StrafeClothoidForwards = 6,
+
+        [EnumMember]
+        StrafeClothoidBackwards = 7,
+    }
+
+    [DataContract]
     public enum NavigationStatus : ushort
     {
         [EnumMember]
