@@ -8,6 +8,12 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.6.0 (20th Aug 19)
+
+* Adds KingpinStateControl & children
+* Adds IsConnectedControl
+* Completes abstraction of kingpin state to a single package.
+
 v1.5.0 (16th Aug 19)
 
 * Adds KingpinFaultSatus code to diagnoise IKingpinStates for faults.
