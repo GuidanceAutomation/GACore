@@ -19,7 +19,7 @@
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{Binding Source={StaticResource fooKingpin}, Path=KingpinState}" />
+            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{Binding Source={StaticResource fooKingpin}, Path=KingpinState}" />  
             <gaCoreUC:LabelContentControl Header="Good">
                 <Button x:Name="goodButton" Click="GoodButton_Click">Good</Button>
             </gaCoreUC:LabelContentControl>
