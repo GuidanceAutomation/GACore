@@ -14,11 +14,17 @@ namespace GACore.DemoApp
 
         private void RandomizeButton_Click(object sender, RoutedEventArgs e)
         {
-            FooKingpinStatusReporter reporter = (FooKingpinStatusReporter)FindResource("fooKingpinStatusReporter");
+            FooKingpinStateReporter reporter = (FooKingpinStateReporter)FindResource("fooKingpinStateReporter");
             reporter.Randomize();
 
             FooCallButton callButton = (FooCallButton)FindResource("fooCallButton");
             callButton.Randomize();
+        }
+
+        private void GoodButton_Click(object sender, RoutedEventArgs e)
+        {
+            FooKingpinStateReporter reporter = (FooKingpinStateReporter)FindResource("fooKingpinStateReporter");
+            reporter.SetGood();
         }
     }
 }

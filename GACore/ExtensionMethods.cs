@@ -1,4 +1,5 @@
 ﻿using GACore.Architecture;
+using System;
 using System.Collections.Generic;
 using System.Windows.Media;
 
@@ -26,6 +27,8 @@ namespace GACore
                     return Colors.White;
             }
         }
+
+        public static double RadToDeg(this double value) => (value * 180.0d) / Math.PI;
 
         public static KingpinFaultDiagnosis Diagnose(this IKingpinState kingpinState) => new KingpinFaultDiagnosis(kingpinState);
 

@@ -55,12 +55,21 @@
     <Compile Include="Converters.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IsConnectedControl.xaml.cs">
+      <DependentUpon>IsConnectedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KingpinStateControl.xaml.cs">
+      <DependentUpon>KingpinStateControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KingpinStatusControl.xaml.cs">
       <DependentUpon>KingpinStatusControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LabelContentControl.cs" />
     <Compile Include="LightStateControl.xaml.cs">
       <DependentUpon>LightStateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PoseControl.xaml.cs">
+      <DependentUpon>PoseControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -96,11 +105,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="IsConnectedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KingpinStateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KingpinStatusControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LightStateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoseControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
