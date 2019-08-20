@@ -14,12 +14,12 @@
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton"/>
-            <local:FooKingpinStateReporter x:Key="fooKingpinStateReporter" />
+            <local:FooKingpin x:Key="fooKingpin" />
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{StaticResource fooKingpinStateReporter}" />
+            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{Binding Source={StaticResource fooKingpin}, Path=KingpinState}" />
             <gaCoreUC:LabelContentControl Header="Good">
                 <Button x:Name="goodButton" Click="GoodButton_Click">Good</Button>
             </gaCoreUC:LabelContentControl>

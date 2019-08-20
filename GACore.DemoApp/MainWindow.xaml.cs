@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System;
 
 namespace GACore.DemoApp
 {
@@ -14,8 +17,8 @@ namespace GACore.DemoApp
 
         private void RandomizeButton_Click(object sender, RoutedEventArgs e)
         {
-            FooKingpinStateReporter reporter = (FooKingpinStateReporter)FindResource("fooKingpinStateReporter");
-            reporter.Randomize();
+            FooKingpin kingpin = (FooKingpin)FindResource("fooKingpin");
+            kingpin.Randomize();
 
             FooCallButton callButton = (FooCallButton)FindResource("fooCallButton");
             callButton.Randomize();
@@ -23,8 +26,8 @@ namespace GACore.DemoApp
 
         private void GoodButton_Click(object sender, RoutedEventArgs e)
         {
-            FooKingpinStateReporter reporter = (FooKingpinStateReporter)FindResource("fooKingpinStateReporter");
-            reporter.SetGood();
+            FooKingpin kingpin = (FooKingpin)FindResource("fooKingpin");
+            kingpin.SetGood();
         }
     }
 }

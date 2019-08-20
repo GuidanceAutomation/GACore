@@ -6,7 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace GACore.DemoApp
 {
-    public class FooKingpinStateReporter : IKingpinState, INotifyPropertyChanged
+    /// <summary>
+    /// Just makes a random kingpin state
+    /// </summary>
+    public class FooKingpinState : IKingpinState
     {
         private PositionControlStatus positionControlStatus = Tools.RandomEnumValue<PositionControlStatus>();
 
@@ -53,22 +56,9 @@ namespace GACore.DemoApp
             }
         }
 
-        public string Alias => "Foo Alias";
+        public string Alias => "Foo Kingpin";
 
-        private bool isVirtual = false;
-
-        public bool IsVirtual
-        {
-            get { return isVirtual; }
-            set
-            {
-                if (isVirtual != value)
-                {
-                    isVirtual = value;
-                    OnNotifyPropertyChanged();
-                }
-            }
-        }
+        public bool IsVirtual => Tools.Random.Next(0, 2) > 0;
 
         public byte Tick => throw new NotImplementedException();
 
@@ -152,25 +142,14 @@ namespace GACore.DemoApp
 
         public bool IsCharging => throw new NotImplementedException();
 
-        public void SetGood()
+        public static IKingpinState FromGood()
         {
-            PositionControlStatus = PositionControlStatus.OK;
-            NavigationStatus = NavigationStatus.OK;
-            DynamicLimiterStatus = DynamicLimiterStatus.OK;            
-        }
-
-        public void Randomize()
-        {
-            PositionControlStatus = Tools.RandomEnumValue<PositionControlStatus>();
-            NavigationStatus = Tools.RandomEnumValue<NavigationStatus>();
-            DynamicLimiterStatus = Tools.RandomEnumValue<DynamicLimiterStatus>();
-            CurrentMovementType = Tools.RandomEnumValue<MovementType>();
-
-            X = Tools.Random.Next(-10, 10);
-            Y = Tools.Random.Next(-10, 10);
-            Heading = Tools.Random.Next(-3, 3);
-
-            IsVirtual = !IsVirtual;
+            return new FooKingpinState()
+            {
+                PositionControlStatus = PositionControlStatus.OK,
+                NavigationStatus = NavigationStatus.OK,
+                DynamicLimiterStatus = DynamicLimiterStatus.OK
+            };
         }
 
         public int LastCompletedInstructionId => throw new NotImplementedException();
