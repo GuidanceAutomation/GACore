@@ -52,9 +52,18 @@
   <ItemGroup>
     <Compile Include="BrushDictionaries.cs" />
     <Compile Include="CallButtonControl.cs" />
-    <Compile Include="Converters.cs" />
+    <Compile Include="Converters\PositionControlStatusToOverlayTextConverter.cs" />
+    <Compile Include="Converters\DynamicLimiterStatusToOverlayTextConverter.cs" />
+    <Compile Include="Converters\IsInFaultConverter.cs" />
+    <Compile Include="Converters\KingpinStateColorConverter.cs" />
+    <Compile Include="Converters\NavigationStatusToOverlayTextConverter.cs" />
+    <Compile Include="Converters\NullableBoolButtonStateStringConverter.cs" />
+    <Compile Include="Converters\NullableBoolStringConverter.cs" />
+    <Compile Include="Converters\NullableEnumStringConverter.cs" />
+    <Compile Include="Converters\RadToDegStringConverter.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Extensions\BrushCollectionExtensions.cs" />
     <Compile Include="IsConnectedControl.xaml.cs">
       <DependentUpon>IsConnectedControl.xaml</DependentUpon>
     </Compile>
@@ -84,8 +93,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.pl.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -22,7 +22,7 @@ namespace GACore.Controls.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace GACore.Controls.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GACore.Controls.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace GACore.Controls.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -72,12 +72,299 @@ namespace GACore.Controls.Properties {
         ///    &lt;!--Unknown tag: sodipodi:namedview--&gt;
         ///    &lt;!--Unknown tag: metadata--&gt;
         ///    &lt;Canvas Name=&quot;layer1&quot;&gt;
-        ///      &lt;Canvas.RenderTransform&gt;
-        ///        &lt;T [rest of string was truncated]&quot;;.
+        ///      &lt;Canvas.RenderTransform&gt; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BannerQ45Iso_Color {
+        public static string BannerQ45Iso_Color {
             get {
                 return ResourceManager.GetString("BannerQ45Iso_Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: De-pressed.
+        /// </summary>
+        public static string UI_ButtonStatus_Depressed {
+            get {
+                return ResourceManager.GetString("UI_ButtonStatus_Depressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Pressed.
+        /// </summary>
+        public static string UI_ButtonStatus_Pressed {
+            get {
+                return ResourceManager.GetString("UI_ButtonStatus_Pressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Unknown.
+        /// </summary>
+        public static string UI_ButtonStatus_Unknown {
+            get {
+                return ResourceManager.GetString("UI_ButtonStatus_Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast Stop.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_FastStop {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_FastStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go Slow.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_GoSlow {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_GoSlow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motor Fault.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_MotorFault {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_MotorFault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_OK {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Safety Sensor.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_SafetySensor {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_SafetySensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning1.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_Warning1 {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_Warning1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning2.
+        /// </summary>
+        public static string UI_DynamicLimiterStatus_Warning2 {
+            get {
+                return ResourceManager.GetString("UI_DynamicLimiterStatus_Warning2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IsConnected:.
+        /// </summary>
+        public static string UI_IsConnected_Lbl_IsConnected {
+            get {
+                return ResourceManager.GetString("UI_IsConnected_Lbl_IsConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IPAddress:.
+        /// </summary>
+        public static string UI_KingpinState_Lbl_IPAddress {
+            get {
+                return ResourceManager.GetString("UI_KingpinState_Lbl_IPAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This agent has experienced a fault and will not receive new jobs until fault(s) are cleared..
+        /// </summary>
+        public static string UI_KingpinState_ToolTip_InFault {
+            get {
+                return ResourceManager.GetString("UI_KingpinState_ToolTip_InFault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lim:.
+        /// </summary>
+        public static string UI_KingpinStatus_Lbl_Limiter {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_Lbl_Limiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nav:.
+        /// </summary>
+        public static string UI_KingpinStatus_Lbl_Navigation {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_Lbl_Navigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pos:.
+        /// </summary>
+        public static string UI_KingpinStatus_Lbl_Position {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_Lbl_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status of the vehicle&apos;s safety systems.
+        /// </summary>
+        public static string UI_KingpinStatus_ToolTip_DynamicLimiterStatus {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_ToolTip_DynamicLimiterStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status of the vehicle&apos;s navigation system.
+        /// </summary>
+        public static string UI_KingpinStatus_ToolTip_NavigationStatus {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_ToolTip_NavigationStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status of the vehicle&apos;s controller system.
+        /// </summary>
+        public static string UI_KingpinStatus_ToolTip_PositionControlStatus {
+            get {
+                return ResourceManager.GetString("UI_KingpinStatus_ToolTip_PositionControlStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Association Failure.
+        /// </summary>
+        public static string UI_NavigationStatus_AssociationFailure {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_AssociationFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Uncertainty.
+        /// </summary>
+        public static string UI_NavigationStatus_HighUncertainty {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_HighUncertainty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost.
+        /// </summary>
+        public static string UI_NavigationStatus_Lost {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_Lost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Response.
+        /// </summary>
+        public static string UI_NavigationStatus_NoResponse {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_NoResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string UI_NavigationStatus_OK {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poor Association.
+        /// </summary>
+        public static string UI_NavigationStatus_PoorAssociation {
+            get {
+                return ResourceManager.GetString("UI_NavigationStatus_PoorAssociation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string UI_PositionControlStatus_Disabled {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_Disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabling.
+        /// </summary>
+        public static string UI_PositionControlStatus_Disabling {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_Disabling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Waypoints.
+        /// </summary>
+        public static string UI_PositionControlStatus_NoWaypoints {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_NoWaypoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string UI_PositionControlStatus_OK {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out Of Position.
+        /// </summary>
+        public static string UI_PositionControlStatus_OutOfPosition {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_OutOfPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waypoint Discontinuity.
+        /// </summary>
+        public static string UI_PositionControlStatus_WaypointDiscontinuity {
+            get {
+                return ResourceManager.GetString("UI_PositionControlStatus_WaypointDiscontinuity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown.
+        /// </summary>
+        public static string UI_Status_Unknown {
+            get {
+                return ResourceManager.GetString("UI_Status_Unknown", resourceCulture);
             }
         }
     }
