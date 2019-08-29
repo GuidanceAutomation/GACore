@@ -1,9 +1,10 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:GACore.Controls">
-    <local:NullableBoolStringConverter x:Key="nullableBoolStringConverter"/>
-    <local:NullableEnumStringConverter x:Key="nullableEnumStringConverter"/>
+    xmlns:local="clr-namespace:GACore.Controls"
+    xmlns:converters="clr-namespace:GACore.Controls.Converters">
+    <converters:NullableBoolStringConverter x:Key="nullableBoolStringConverter"/>
+    <converters:NullableEnumStringConverter x:Key="nullableEnumStringConverter"/>
     <Style TargetType="local:CallButtonControl">
         <Setter Property="Template">
             <Setter.Value>

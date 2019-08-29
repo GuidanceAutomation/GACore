@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GACore.Controls"
+             xmlns:p="clr-namespace:GACore.Controls.Properties"
+             xmlns:converters="clr-namespace:GACore.Controls.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,8 +13,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:KingpinStateColorConverter x:Key="kingpinStateColorConverter"/>
-            <local:IsInFaultConverter x:Key="isInFaultConverter"/>
+            <converters:KingpinStateColorConverter x:Key="kingpinStateColorConverter"/>
+            <converters:IsInFaultConverter x:Key="isInFaultConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
@@ -42,12 +44,12 @@
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Converter={StaticResource isInFaultConverter}}" Value="True">
                             <Setter Property="StackPanel.Background" Value="Crimson" />
-                            <Setter Property="StackPanel.ToolTip" Value="This agent has experienced a fault and will not receive new jobs until fault(s) are cleared." />
+                            <Setter Property="StackPanel.ToolTip" Value="{x:Static p:Resources.UI_KingpinState_ToolTip_InFault}" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </StackPanel.Style>
-            <local:LabelContentControl Header="IPAddress:">
+            <local:LabelContentControl Header="{x:Static p:Resources.UI_KingpinState_Lbl_IPAddress}">
                 <TextBlock Text="{Binding Path=IPAddress}"/>
             </local:LabelContentControl>
             <local:PoseControl/>

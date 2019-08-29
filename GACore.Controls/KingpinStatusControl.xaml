@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:GACore.Controls"
+             xmlns:p="clr-namespace:GACore.Controls.Properties"
+             xmlns:converters="clr-namespace:GACore.Controls.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,17 +13,17 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:PositionControlStatusToOverlayTextConverter x:Key="pcsConverter" />
-            <local:NavigationStatusToOverlayTextConverter x:Key="nsConverter" />
-            <local:DynamicLimiterStatusToOverlayTextConverter x:Key="dlsConverter" />
+            <converters:PositionControlStatusToOverlayTextConverter x:Key="pcsConverter" />
+            <converters:NavigationStatusToOverlayTextConverter x:Key="nsConverter" />
+            <converters:DynamicLimiterStatusToOverlayTextConverter x:Key="dlsConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <Border BorderBrush="Black">
         <StackPanel>
-            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="Status of the vehicle's controller system"
+            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="{x:Static p:Resources.UI_KingpinStatus_ToolTip_PositionControlStatus}"
                   Background="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Background}}" Opacity="0.5">
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
-                    <local:LabelContentControl Header="Pos:" Foreground="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter},
+                    <local:LabelContentControl Header="{x:Static p:Resources.UI_KingpinStatus_Lbl_Position}" Foreground="{Binding Path=PositionControlStatus, Converter={StaticResource pcsConverter},
                         ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                Text="{Binding Path=PositionControlStatus,
@@ -32,10 +34,10 @@
                 </Viewbox>
             </Grid>
             <Separator Margin="0" />
-            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="Status of the vehicle's navigation system"
+            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="{x:Static p:Resources.UI_KingpinStatus_ToolTip_NavigationStatus}"
                   Background="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Background}}" Opacity="0.5">
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
-                    <local:LabelContentControl Header="Nav:" Foreground="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
+                    <local:LabelContentControl Header="{x:Static p:Resources.UI_KingpinStatus_Lbl_Navigation}" Foreground="{Binding Path=NavigationStatus, Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                    Text="{Binding Path=NavigationStatus,
                                    Converter={StaticResource nsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
@@ -45,10 +47,10 @@
                 </Viewbox>
             </Grid>
             <Separator Margin="0" />
-            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="Status of the vehicle's safety systems"
+            <Grid IsHitTestVisible="True" Width="150" Height="30" ToolTip="{x:Static p:Resources.UI_KingpinStatus_ToolTip_DynamicLimiterStatus}"
                 Background="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Background}}" Opacity="0.5">
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
-                    <local:LabelContentControl Header="Lim:" Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
+                    <local:LabelContentControl Header="{x:Static p:Resources.UI_KingpinStatus_Lbl_Limiter}" Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                 Text="{Binding Path=DynamicLimiterStatus, 
                                 Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
