@@ -72,7 +72,8 @@ namespace GACore.Controls
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             IKingpinState kingpinState = value as IKingpinState;
-            return kingpinState.IsInFault();
+			if (kingpinState != null) return kingpinState.IsInFault();
+			else return true;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -83,9 +84,10 @@ namespace GACore.Controls
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            IKingpinState kingpinState = value as IKingpinState;
-            return kingpinState.IsVirtual ? Brushes.Cyan : Brushes.Black;
-        }
+			IKingpinState kingpinState = value as IKingpinState;
+			if (kingpinState != null) return kingpinState.IsVirtual ? Brushes.Cyan : Brushes.Black;
+			else return Brushes.Black;
+		}
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             => throw new NotImplementedException("KingpinStateColorConverter ConvertBack()");
