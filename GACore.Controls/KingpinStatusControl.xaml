@@ -50,7 +50,7 @@
                 <Viewbox HorizontalAlignment="Stretch" Panel.ZIndex="2">
                     <local:LabelContentControl Header="Lim:" Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}, Mode=OneWay}">
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Text="{Binding Path=DynamicLimiterStatus, 
+                                Text="{Binding Path=DynamicLimiterStatus,
                                 Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Text}, FallbackValue=DataContext?}"
                                 Foreground="{Binding Path=DynamicLimiterStatus, Converter={StaticResource dlsConverter}, ConverterParameter={x:Static local:BrushCollectionProperty.Foreground}}">
                         </TextBlock>

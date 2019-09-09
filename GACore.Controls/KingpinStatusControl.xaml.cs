@@ -2,14 +2,14 @@
 
 namespace GACore.Controls
 {
-    /// <summary>
-    /// Interaction logic for KingpinStatusControl.xaml
-    /// </summary>
-    public partial class KingpinStatusControl : UserControl
-    {
-        public KingpinStatusControl()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for KingpinStatusControl.xaml
+	/// </summary>
+	public partial class KingpinStatusControl : UserControl
+	{
+		public KingpinStatusControl()
+		{
+			InitializeComponent();
+		}
+	}
 }

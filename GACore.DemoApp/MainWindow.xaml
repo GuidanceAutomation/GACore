@@ -13,38 +13,38 @@
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:FooCallButton x:Key="fooCallButton"/>
+            <local:FooCallButton x:Key="fooCallButton" />
             <local:FooKingpin x:Key="fooKingpin" />
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <gaCoreUC:IPV4Control IPV4String="192.168.1.1"/>
-            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{Binding Source={StaticResource fooKingpin}, Path=KingpinState}" />  
+            <gaCoreUC:IPV4Control IPV4String="192.168.1.1" />
+            <gaCoreUC:KingpinStateControl x:Name="kingpinStateControl" DataContext="{Binding Source={StaticResource fooKingpin}, Path=KingpinState}" />
             <gaCoreUC:LabelContentControl Header="Good">
                 <Button x:Name="goodButton" Click="GoodButton_Click">Good</Button>
             </gaCoreUC:LabelContentControl>
             <gaCoreUC:LabelContentControl Header="Randomize">
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
-            <gaCoreUC:CallButtonControl 
+            <gaCoreUC:CallButtonControl
                 Alias="Call Button: Generic"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
-                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}"
                                         Width="200"
                                         Height="300"
                 Alias="Call Button: Banner Q45"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
-                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
-                
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}" />
+
                 <gaCoreUC:CallButtonControl Style="{StaticResource BannerQ45}"
                                         Width="300"
                                         Height="450"
                 Alias="Call Button: Banner Q45"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"
-                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}"/>
+                LightState="{Binding Source={StaticResource fooCallButton}, Path=LightState}" />
             </StackPanel>
         </StackPanel>
     </Grid>
