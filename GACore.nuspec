@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.6.0</version>
-    <authors>Martin Davies</authors>
+    <version>1.7.0</version>
+    <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
     <projectUrl>https://github.com/GuidanceAutomation/GACore</projectUrl>

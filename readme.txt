@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.7.0 (09th Sep 19)
+
+* Adds IPV4 control
+
 v1.6.0 (20th Aug 19)
 
 * Adds KingpinStateControl & children
