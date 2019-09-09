@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GACore.Controls"
-             mc:Ignorable="d">
-    <TextBox x:Name="ipV4TextBox" TextChanged="IpV4TextBox_TextChanged" TextAlignment="Right" Text="127.0.0.1"/>
+             mc:Ignorable="d"
+             x:Name="ipV4Control">
+    <TextBox x:Name="ipV4TextBox" TextChanged="IpV4TextBox_TextChanged" TextAlignment="Right" Text="{Binding IPV4String, ElementName=ipV4Control, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 </UserControl>
