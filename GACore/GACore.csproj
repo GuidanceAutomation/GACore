@@ -48,6 +48,7 @@
     <Compile Include="BrushCollection.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="GenericMailbox.cs" />
     <Compile Include="KingpinFaultDiagnosis.cs" />
     <Compile Include="KingpinStateData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
