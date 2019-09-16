@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.8.2 (16th Sep 19)
+
+* Removes poorly thought-out value constraint on key for GenericMailbox.
+
 v1.8.1 (16th Sep 19)
 
 * Fixes GenericMailbox failed branch merge.

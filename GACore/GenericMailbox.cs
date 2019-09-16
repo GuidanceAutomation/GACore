@@ -9,7 +9,7 @@ namespace GACore
 	/// </summary>
 	/// <typeparam name="T">Key (struct)</typeparam>
 	/// <typeparam name="U">Mail (class)</typeparam>
-	public abstract class GenericMailbox<T, U> : INotifyPropertyChanged where T : struct where U : class
+	public abstract class GenericMailbox<T, U> : INotifyPropertyChanged where U : class
 	{
 		private readonly T key;
 
@@ -17,6 +17,8 @@ namespace GACore
 
 		public GenericMailbox(T key, U mail)
 		{
+			if (key == null) throw new ArgumentNullException("key");
+
 			if (mail == null) throw new ArgumentNullException("mail");
 
 			this.key = key;
