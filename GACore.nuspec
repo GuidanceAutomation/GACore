@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
     <projectUrl>https://github.com/GuidanceAutomation/GACore</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Core components for Guidance Automation assemblies</description>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes/>
     <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>

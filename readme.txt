@@ -8,7 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
-v1.7.0 (09th Sep 19)
+v1.8.0 (16th Sep 19)
+
+* Add GenericMailbox
+
+v1.7.0 (9th Sep 19)
 
 * Adds IPV4 control
 
