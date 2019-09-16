@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.8.1 (16th Sep 19)
+
+* Fixes GenericMailbox failed branch merge.
+
 v1.8.0 (16th Sep 19)
 
 * Add GenericMailbox
