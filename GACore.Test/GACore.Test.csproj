@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FooMailbox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TGenericMailbox.cs" />
     <Compile Include="TKingpinFaultDiagnosis.cs" />
     <Compile Include="TSemVerData.cs" />
   </ItemGroup>
