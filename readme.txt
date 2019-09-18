@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.9.0 (18th Sep 19)
+
+* Adds NLogManager and associated components.
+
 v1.8.2 (16th Sep 19)
 
 * Removes poorly thought-out value constraint on key for GenericMailbox.
