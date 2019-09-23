@@ -45,6 +45,7 @@
     <Compile Include="Enumerators.cs" />
     <Compile Include="IKingpinState.cs" />
     <Compile Include="IKingpinStatusReporter.cs" />
+    <Compile Include="IResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.10.0 (23rd Sep 19)
+
+* Adds IResult and IGenericResult<T> interfaces and implementations. 
+
 v1.9.0 (18th Sep 19)
 
 * Adds NLogManager and associated components.
