@@ -63,6 +63,7 @@
     <Compile Include="TGenericResult.cs" />
     <Compile Include="TKingpinFaultDiagnosis.cs" />
     <Compile Include="TResult.cs" />
+    <Compile Include="TResultFactory.cs" />
     <Compile Include="TSemVerData.cs" />
   </ItemGroup>
   <ItemGroup>

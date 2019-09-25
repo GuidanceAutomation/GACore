@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.11.1 (25th Sep 19)
+
+* Adds missing methods on ResultFactory
+
 v1.11.0 (25th Sep 19)
 
 * Adds ResultFactory
