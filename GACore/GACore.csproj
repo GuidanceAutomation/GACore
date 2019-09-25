@@ -63,6 +63,7 @@
     <Compile Include="NLog\NLogManager.cs" />
     <Compile Include="NLog\TargetFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultFactory.cs" />
     <Compile Include="Results.cs" />
     <Compile Include="SemVerData.cs" />
     <Compile Include="Tools.cs" />

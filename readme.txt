@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.11.0 (25th Sep 19)
+
+* Adds ResultFactory
+
 v1.10.0 (23rd Sep 19)
 
 * Adds IResult and IGenericResult<T> interfaces and implementations. 

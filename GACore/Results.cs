@@ -33,12 +33,12 @@ namespace GACore
 	{
 		private readonly T value;
 
-		public GenericResult(bool isSuccessful, T result = default(T), string failureReason = default(string))
+		public GenericResult(bool isSuccessful, T value = default(T), string failureReason = default(string))
 			: base(isSuccessful, failureReason)
 		{
-			if (isSuccessful && result == null) throw new ArgumentOutOfRangeException("Can't be succesful and return a null value");
+			if (isSuccessful && value == null) throw new ArgumentOutOfRangeException("Can't be succesful and return a null value");
 
-			this.value = isSuccessful ? result : default(T);
+			this.value = isSuccessful ? value : default(T);
 		}
 
 		public T Value => value;

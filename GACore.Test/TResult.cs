@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GACore.Architecture;
 using NUnit.Framework;
-using GACore;
-using GACore.Architecture;
+using System;
 
 namespace GACore.Test
 {
@@ -13,6 +8,25 @@ namespace GACore.Test
 	[Description("Result object")]
 	public class TResult
 	{
+		[Test]
+		public void ResultFactorySuccess()
+		{
+			IResult result = ResultFactory.FromSuccess();
+
+			Assert.IsTrue(result.IsSuccessful);
+			StringAssert.AreEqualIgnoringCase(string.Empty, result.FailureReason);
+		}
+
+		[Test]
+		public void ResultFactoryGenericSuccess()
+		{
+			IGenericResult<int> result = ResultFactory.FromSuccess<int>(69);
+
+			Assert.IsTrue(result.IsSuccessful);
+			Assert.AreEqual(69, result.Value);
+			StringAssert.AreEqualIgnoringCase(string.Empty, result.FailureReason);
+		}
+
 		[Test]
 		public void Success()
 		{
