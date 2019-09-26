@@ -8,6 +8,17 @@ namespace GACore.Test
 	public class TResultFactory
 	{
 		[Test]
+		public void StringFormatting()
+		{
+			int[] args = { 1, 2, 3 };
+			string expected = string.Format("ohes noes: {0}, {1}, {2}", args[0], args[1], args[2]);
+
+			IGenericResult<int> result = ResultFactory.FromFailure<int>("ohes noes: {0}, {1}, {2}", args[0], args[1], args[2]);
+
+			StringAssert.AreEqualIgnoringCase(expected, result.FailureReason);
+		}
+
+		[Test]
 		public void ResultFactoryUnkownFailure()
 		{
 			IResult result = ResultFactory.FromUnknownFailure();

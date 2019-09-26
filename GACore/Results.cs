@@ -4,7 +4,7 @@ using System;
 namespace GACore
 {
 	public class Result : IResult
-	{	
+	{
 		private readonly string failureReason;
 
 		private readonly bool isSuccessful;

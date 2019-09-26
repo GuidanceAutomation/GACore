@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-using NLog;
+﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace GACore.NLog
 {
@@ -26,7 +24,7 @@ namespace GACore.NLog
 		public string LogDir
 		{
 			get { return logDir; }
-		
+
 			set
 			{
 				if (string.IsNullOrEmpty(value)) throw new ArgumentNullException("logDir");

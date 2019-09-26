@@ -8,6 +8,17 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.12.0 (26th Sep 19)
+
+* Adds GACore.Extensions	
+** Useful extension methods (50+)
+** Mainly for manipulating collections
+* Adds GACore.Generics
+** Containers for comparative objects
+* Adds Tignometry static tools
+* Adds Maths static tools 
+** LinSpace for creating linearly spaced arrays
+
 v1.11.1 (25th Sep 19)
 
 * Adds missing methods on ResultFactory

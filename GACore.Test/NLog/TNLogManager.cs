@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GACore.NLog;
-using NUnit.Framework;
-using System.IO;
+﻿using GACore.NLog;
 using NLog;
+using NUnit.Framework;
+using System;
+using System.IO;
 
 namespace GACore.Test.NLog
 {

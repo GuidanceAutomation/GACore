@@ -1,7 +1,7 @@
 ﻿namespace GACore.Architecture
 {
 	/// <summary>
-	/// Lightweight structure to return a failure reason when an operation fails for traceability. 
+	/// Lightweight structure to return a failure reason when an operation fails for traceability.
 	/// </summary>
 	public interface IResult
 	{
