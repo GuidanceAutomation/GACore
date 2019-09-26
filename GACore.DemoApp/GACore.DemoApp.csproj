@@ -108,6 +108,10 @@
       <Project>{dade4cdf-ae57-41c9-8496-8d3a006b5570}</Project>
       <Name>GACore.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GACore.Extensions\GACore.Extensions.csproj">
+      <Project>{9641b9d0-8dd9-448f-9625-68fba376f10b}</Project>
+      <Name>GACore.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GACore\GACore.csproj">
       <Project>{94692317-e2d2-4e43-8e50-ec3188de861a}</Project>
       <Name>GACore</Name>
