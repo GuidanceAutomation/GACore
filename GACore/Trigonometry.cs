@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GACore
 {
 	public static class Trigonometry
-	{       
+	{
 		/// <summary>
-	    /// Minimum angle in radians between two angles
+		/// Minimum angle in radians between two angles
 		/// </summary>
 		public static double MinAngleRad(double aRad, double bRad)
 		{

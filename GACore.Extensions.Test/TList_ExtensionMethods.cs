@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GACore.Extensions.Test.TestObjects;
 using NUnit.Framework;
-using GACore.Extensions.Test.TestObjects;
+using System.Collections.Generic;
 
 namespace GACore.Extensions.Test
 {
@@ -104,7 +100,6 @@ namespace GACore.Extensions.Test
 			{
 				new FooA(), new FooA()
 			};
-
 
 			List<AbstractFoo> delisted = sourceList.DelistGroup();
 
