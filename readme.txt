@@ -8,7 +8,12 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
-v1.12.0 (26th Sep 19)
+v1.12.2 (26th Sep 19)
+
+* .net472 framework 
+* Removes duplicate extension methods between GACore.ExtensionMethods (class) and GACore.ExtensionMethods (assemblies).
+
+v1.12.1 (26th Sep 19)
 
 * Adds GACore.Extensions	
 ** Useful extension methods (50+)

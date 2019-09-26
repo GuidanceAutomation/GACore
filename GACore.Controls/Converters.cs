@@ -1,4 +1,5 @@
 ﻿using GACore.Architecture;
+using GACore.Extensions;
 using System;
 using System.Globalization;
 using System.Windows.Data;

@@ -7,11 +7,6 @@ namespace GACore
 {
 	public static class ExtensionMethods
 	{
-		public static bool IsCurrentByteTickLarger(this byte current, byte other)
-		{
-			return (current < other && (other - current) > 128) || (current > other && (current - other) < 128);
-		}
-
 		public static Color ToColor(this LightState? lightState)
 		{
 			switch (lightState)
@@ -27,8 +22,6 @@ namespace GACore
 					return Colors.White;
 			}
 		}
-
-		public static double RadToDeg(this double value) => (value * 180.0d) / Math.PI;
 
 		public static KingpinFaultDiagnosis Diagnose(this IKingpinState kingpinState) => new KingpinFaultDiagnosis(kingpinState);
 
