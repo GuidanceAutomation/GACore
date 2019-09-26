@@ -15,5 +15,17 @@ namespace GACore
 		public static IGenericResult<T> FromFailure<T>(string failureReason) => new GenericResult<T>(false, default(T), failureReason);
 
 		public static IGenericResult<T> FromUnknownFailure<T>() => new GenericResult<T>(false, default(T), "Unknown");
+
+		public static IResult FromFailure(string format, object arg0)
+			=> ResultFactory.FromFailure(string.Format(format, arg0));
+
+		public static IResult FromFailure(string format, params object[] args)
+			=> ResultFactory.FromFailure(string.Format(format, args));
+
+		public static IGenericResult<T> FromFailure<T>(string format, object arg0)
+			=> ResultFactory.FromFailure<T>(string.Format(format, arg0));
+
+		public static IGenericResult<T> FromFailure<T>(string format, params object[] args)
+			=> ResultFactory.FromFailure<T>(string.Format(format, args));
 	}
 }
