@@ -63,16 +63,6 @@ namespace GACore.Extensions
 		/// <summary>
 		/// Wraps into range [-PI, PI]
 		/// </summary>
-		public static double PiWrap(this double angle)
-		{
-			int numRevs = (int)(angle / (2.0d * Math.PI));
-			angle -= (double)numRevs * 2.0d * Math.PI;
-
-			if (angle > Math.PI) angle -= 2.0d * Math.PI;
-
-			if (angle <= -Math.PI) angle += 2.0d * Math.PI;
-
-			return angle;
-		}
+		public static double PiWrap(this double angle) => Trigonometry.PiWrap(angle);
 	}
 }

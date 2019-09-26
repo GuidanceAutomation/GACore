@@ -53,9 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrushCollection.cs" />
+    <Compile Include="Maths.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="GenericMailbox.cs" />
+    <Compile Include="Generics\Limit.cs" />
+    <Compile Include="Generics\Quandary.cs" />
     <Compile Include="IPAddressRange.cs" />
     <Compile Include="KingpinFaultDiagnosis.cs" />
     <Compile Include="KingpinStateData.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Results.cs" />
     <Compile Include="SemVerData.cs" />
     <Compile Include="Tools.cs" />
+    <Compile Include="Trigonometry.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GACore.Architecture\GACore.Architecture.csproj">

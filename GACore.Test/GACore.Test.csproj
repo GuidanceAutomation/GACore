@@ -57,15 +57,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FooMailbox.cs" />
+    <Compile Include="Generics\TLimit.cs" />
+    <Compile Include="Generics\TQuandary.cs" />
     <Compile Include="NLog\TNLogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TGenericMailbox.cs" />
     <Compile Include="TGenericResult.cs" />
     <Compile Include="TIPAddressRange.cs" />
     <Compile Include="TKingpinFaultDiagnosis.cs" />
+    <Compile Include="TMaths.cs" />
     <Compile Include="TResult.cs" />
     <Compile Include="TResultFactory.cs" />
     <Compile Include="TSemVerData.cs" />
+    <Compile Include="TTrigonometry.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GACore.Architecture\GACore.Architecture.csproj">
