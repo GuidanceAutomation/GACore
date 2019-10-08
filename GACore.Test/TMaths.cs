@@ -24,6 +24,10 @@ namespace GACore.Test
 		[TestCase(3, 3.01, true)]
 		[TestCase(0, 3.2, false)]
 		[TestCase(3.01, 3, true)]
+		[TestCase(1.57, 0, false)]
+		[TestCase(0, 1.57, false)]
+		[TestCase(1.5707963267948966, 0, false)]
+		[TestCase(0, 1.5707963267948966, false)]
 		[TestCase(Math.PI, -Math.PI, true)]
 		[TestCase(-Math.PI, Math.PI, true)]
 		public void AreWithinRadTol(double radA, double radB, bool expected)

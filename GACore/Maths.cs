@@ -17,7 +17,7 @@ namespace GACore
 		public static bool AreWithinRadTol(double aRad, double bRad)
 		{
 			double headingDelta = Trigonometry.MinAngleRad(aRad, bRad);
-			return headingDelta <= radTol;
+			return Math.Abs(headingDelta) <= radTol;
 		}
 
 		/// <summary>

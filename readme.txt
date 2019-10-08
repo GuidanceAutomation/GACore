@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.13.1 (8th Oct 19)
+
+* Fixes missing abs check to AreWithinRadTol.
+
 v1.13.0 (8th Oct 19)
 
 * Adds AreWithinRadTol to Maths. 
