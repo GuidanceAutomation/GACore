@@ -1,10 +1,11 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace GACore.Test
 {
 	[TestFixture]
 	[Category("Maths")]
-	public class TLinSpace
+	public class TMaths
 	{
 		[Test]
 		[TestCase(0, 1, 2, new double[] { 0, 1 })]
@@ -15,6 +16,19 @@ namespace GACore.Test
 		public void LinSpace_Create(double x, double y, int n, double[] expected)
 		{
 			CollectionAssert.AreEqual(expected, GACore.Maths.LinSpace(x, y, n));
+		}
+
+		[Test]
+		[TestCase(0, 0, true)]
+		[TestCase(3, 3, true)]
+		[TestCase(3, 3.01, true)]
+		[TestCase(0, 3.2, false)]
+		[TestCase(3.01, 3, true)]
+		[TestCase(Math.PI, -Math.PI, true)]
+		[TestCase(-Math.PI, Math.PI, true)]
+		public void AreWithinRadTol(double radA, double radB, bool expected)
+		{
+			Assert.AreEqual(expected, Maths.AreWithinRadTol(radA, radB));
 		}
 	}
 }

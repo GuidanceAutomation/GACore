@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.13.0 (8th Oct 19)
+
+* Adds AreWithinRadTol to Maths. 
+
 v1.12.2 (26th Sep 19)
 
 * .net472 framework 

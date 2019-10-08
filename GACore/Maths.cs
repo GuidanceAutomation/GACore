@@ -1,7 +1,25 @@
-﻿namespace GACore
+﻿using System;
+
+namespace GACore
 {
 	public class Maths
 	{
+		private static readonly double radTol = (2 * Math.PI) / 180;
+
+		/// <summary>
+		/// Threshold for if two radian values are considered equal.
+		/// </summary>
+		public static double RadTol => radTol;
+
+		/// <summary>
+		/// True if two radian values are within threshold to be considered equal.
+		/// </summary>
+		public static bool AreWithinRadTol(double aRad, double bRad)
+		{
+			double headingDelta = Trigonometry.MinAngleRad(aRad, bRad);
+			return headingDelta <= radTol;
+		}
+
 		/// <summary>
 		/// Creates array of linearly spaced elements.
 		/// </summary>
