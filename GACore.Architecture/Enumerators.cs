@@ -43,6 +43,28 @@ namespace GACore.Architecture
 	}
 
 	[DataContract]
+	public enum OccupyingMandateState
+	{
+		[EnumMember]
+		None = 0,
+
+		[EnumMember]
+		InProgress = 1,
+
+		[EnumMember]
+		Occupied = 2,
+
+		[EnumMember]
+		TimedOut = 3,
+
+		[EnumMember]
+		AwaitingPreProcess = 4,
+
+		[EnumMember]
+		FailedPreProcessing = 5
+	};
+
+	[DataContract]
 	public enum TaskStatus
 	{
 		[EnumMember]
