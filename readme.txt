@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.14.0 (14th Oct 19)
+
+* Adds enumerators for Task type, Status, etc. 
+
 v1.13.1 (8th Oct 19)
 
 * Fixes missing abs check to AreWithinRadTol.
