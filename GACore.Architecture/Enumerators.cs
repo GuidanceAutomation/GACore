@@ -2,6 +2,108 @@
 
 namespace GACore.Architecture
 {
+	/// <summary>
+	/// Enum to indicate job status.
+	/// </summary>
+	[DataContract]
+	public enum JobStatus
+	{
+		[EnumMember]
+		Assembly = 0,
+
+		[EnumMember]
+		Assigning = 1,
+
+		[EnumMember]
+		Waiting = 2,
+
+		[EnumMember]
+		InProgress = 3,
+
+		[EnumMember]
+		Completed = 4,
+
+		[EnumMember]
+		Aborting = 5,
+
+		[EnumMember]
+		Aborted = 6,
+
+		[EnumMember]
+		Editing = 7,
+
+		[EnumMember]
+		Failing = 8,
+
+		[EnumMember]
+		Failed = 9,
+
+		[EnumMember]
+		PartiallyCompleted = 10
+	}
+
+	[DataContract]
+	public enum TaskStatus
+	{
+		[EnumMember]
+		Unstarted = 0,
+
+		[EnumMember]
+		InProgress = 1,
+
+		[EnumMember]
+		Completed = 2,
+
+		[EnumMember]
+		Aborting = 3,
+
+		[EnumMember]
+		Aborted = 4,
+
+		[EnumMember]
+		Failing = 5,
+
+		[EnumMember]
+		Failed = 6,
+
+		[EnumMember]
+		Editing = 7,
+
+		[EnumMember]
+		PartiallyCompleted = 8
+	};
+
+	[DataContract]
+	public enum TaskType
+	{
+		[EnumMember]
+		UnorderedList = 0,
+
+		[EnumMember]
+		OrderedList = 1,
+
+		[EnumMember]
+		AtomicMoveList = 2,
+
+		[EnumMember]
+		ServiceAtNode = 3,
+
+		[EnumMember]
+		AwaitAtNode = 4,
+
+		[EnumMember]
+		SleepAtNode = 5,
+
+		[EnumMember]
+		ChargeAtNode = 6,
+
+		[EnumMember]
+		GoToNode = 7,
+
+		[EnumMember]
+		AtomicMove = 8
+	};
+
 	[DataContract]
 	public enum DynamicLimiterStatus : ushort
 	{
@@ -29,6 +131,25 @@ namespace GACore.Architecture
 		[EnumMember]
 		Unknown = 65535
 	}
+
+	[DataContract]
+	public enum ServiceType
+	{
+		[EnumMember]
+		Charge = 0, // AGVs are able to charge here
+
+		[EnumMember]
+		Park = 1, // AGVs are able to park here
+
+		[EnumMember]
+		Fault = 2, // AGVs should try to go here if they have a fault
+
+		[EnumMember]
+		ManualLoadHandling = 3, // Manual load handling can occur here
+
+		[EnumMember]
+		Execution = 4 // ALL NODES SUPPORT - a service to send an AGV to this node and peform an execution instruction
+	};
 
 	[DataContract]
 	public enum FrozenState
