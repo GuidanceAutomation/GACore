@@ -8,9 +8,22 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using GACore.Controls;
 using System.Windows.Media;
+using GACore.Extensions;
 
 namespace GACore.Controls.View
 {
+	public class RadToDegStringConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			double rad = (float)value;
+			return rad.RadToDeg();
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+			=> throw new NotImplementedException("RadToDegStringConverter ConvertBack()");
+	}
+
 	public class IsInFaultConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -31,7 +31,7 @@
                Text="{Binding Path=KingpinState.Alias, FallbackValue='\{Alias\}'}"
                FontWeight="Bold"
                FontSize="20"
-               Foreground="{Binding Converter={StaticResource kingpinStateColorConverter}}">
+               Foreground="{Binding Path=KingpinState, Converter={StaticResource kingpinStateColorConverter}}">
             </TextBlock>
             <TextBlock DockPanel.Dock="Right" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"
                Text="{Binding Path=KingpinState.CurrentMovementType, FallbackValue='\{Pontificating\}'}"
@@ -52,7 +52,7 @@
             <controls:LabelContentControl Header="IPAddress:">
                 <TextBlock Text="{Binding Path=KingpinState.IPAddress}" />
             </controls:LabelContentControl>
-            <controls:PoseControl />
+            <local:PoseView DataContext="{Binding KingpinState}"/>
         </StackPanel>
         <local:KingpinStatusView x:Name="ksView" Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
     </Grid>
