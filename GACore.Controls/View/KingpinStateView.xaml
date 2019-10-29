@@ -4,9 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GACore.Controls.View"
+             xmlns:controls="clr-namespace:GACore.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              DataContextChanged="UserControl_DataContextChanged">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:KingpinStateColorConverter x:Key="kingpinStateColorConverter" />
+            <local:IsInFaultConverter x:Key="isInFaultConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -16,6 +26,34 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <TextBlock DockPanel.Dock="Left" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"
+               Text="{Binding Path=KingpinState.Alias, FallbackValue='\{Alias\}'}"
+               FontWeight="Bold"
+               FontSize="20"
+               Foreground="{Binding Converter={StaticResource kingpinStateColorConverter}}">
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Right" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"
+               Text="{Binding Path=KingpinState.CurrentMovementType, FallbackValue='\{Pontificating\}'}"
+               FontWeight="Bold"
+               FontSize="20" />
+        </DockPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="3,0,3,3">
+            <StackPanel.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=KingpinState, Converter={StaticResource isInFaultConverter}}" Value="True">
+                            <Setter Property="StackPanel.Background" Value="Crimson" />
+                            <Setter Property="StackPanel.ToolTip" Value="This agent has experienced a fault and will not receive new jobs until fault(s) are cleared." />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <controls:LabelContentControl Header="IPAddress:">
+                <TextBlock Text="{Binding Path=KingpinState.IPAddress}" />
+            </controls:LabelContentControl>
+            <controls:PoseControl />
+        </StackPanel>
         <local:KingpinStatusView x:Name="ksView" Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
     </Grid>
 </UserControl>

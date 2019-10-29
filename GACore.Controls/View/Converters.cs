@@ -6,9 +6,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using GACore.Controls;
+using System.Windows.Media;
 
 namespace GACore.Controls.View
 {
+	public class IsInFaultConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			IKingpinState kingpinState = value as IKingpinState;
+			if (kingpinState != null) return kingpinState.IsInFault();
+			else return true;
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+			=> throw new NotImplementedException();
+	}
+
+	public class KingpinStateColorConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			IKingpinState kingpinState = value as IKingpinState;
+			if (kingpinState != null) return kingpinState.IsVirtual ? Brushes.Cyan : Brushes.Black;
+			else return Brushes.Black;
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+			=> throw new NotImplementedException("KingpinStateColorConverter ConvertBack()");
+	}
+
 	public class DynamicLimiterStatusToOverlayTextConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
