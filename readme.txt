@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.14.1 (29th Oct 19)
+
+* Adds boilerplate MVVM components
+
 v1.14.0 (14th Oct 19)
 
 * Adds enumerators for Task type, Status, etc. 
