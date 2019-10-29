@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GACore.Controls.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContextChanged="UserControl_DataContextChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -15,6 +16,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <local:KingpinStatusView Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
+        <local:KingpinStatusView x:Name="ksView" Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
 ﻿using GACore.Architecture;
+using GACore.Controls.ViewModel;
 using System;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -20,6 +21,18 @@ namespace GACore.Controls.View
 		{
 			if (DataContext is IRefresh)
 				((IRefresh)DataContext).Refresh();
+		}
+
+		private void UserControl_DataContextChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+		{
+			KingpinStateReporterViewModel viewModel = e.NewValue as KingpinStateReporterViewModel;
+
+			if (viewModel != null)
+			{
+				IKingpinStateReporter reporter = viewModel.Model;
+
+				if (reporter != null) ksView.DataContext = ViewModelFactory.GetKingpinStatusReporterViewModel(reporter);
+			}
 		}
 	}
 }

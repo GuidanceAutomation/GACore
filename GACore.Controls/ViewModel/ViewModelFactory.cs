@@ -18,5 +18,15 @@ namespace GACore.Controls.ViewModel
 				Model = kingpinStateReporter
 			};
 		}
+
+		public static KingpinStatusReporterViewModel GetKingpinStatusReporterViewModel(IKingpinStateReporter kingpinStateReporter)
+		{
+			if (kingpinStateReporter == null) throw new ArgumentNullException("kingpinStateReporter");
+
+			return new KingpinStatusReporterViewModel()
+			{
+				Model = kingpinStateReporter
+			};
+		}
 	}
 }
