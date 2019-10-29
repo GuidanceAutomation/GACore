@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="ViewModel\KingpinStateReporterViewModel.cs" />
     <Compile Include="ViewModel\KingpinStatusReporterViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelFactory.cs" />
     <Compile Include="View\Converters.cs" />
     <Compile Include="View\KingpinStateView.xaml.cs">
       <DependentUpon>KingpinStateView.xaml</DependentUpon>

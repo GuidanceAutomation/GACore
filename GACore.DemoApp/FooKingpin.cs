@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace GACore.DemoApp
 {
-	public class FooKingpin : INotifyPropertyChanged
+	public class FooKingpin : INotifyPropertyChanged, IKingpinStateReporter
 	{
 		private IKingpinState kingpinState = new FooKingpinState();
 
