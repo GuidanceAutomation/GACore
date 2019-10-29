@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.15.0 (29th Oct 19)
+
+* Switches to MVVM pattern for KingpinState and KingpinStatus views. 
+* Allows views to update at FPS rate, rather than kingpin state updates which may occur at high frequency and flood dispatcher thread. 
+
 v1.14.1 (29th Oct 19)
 
 * Adds boilerplate MVVM components
