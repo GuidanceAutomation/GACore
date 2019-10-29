@@ -61,18 +61,9 @@
     <Compile Include="IsConnectedControl.xaml.cs">
       <DependentUpon>IsConnectedControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KingpinStateControl.xaml.cs">
-      <DependentUpon>KingpinStateControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="KingpinStatusControl.xaml.cs">
-      <DependentUpon>KingpinStatusControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LabelContentControl.cs" />
     <Compile Include="LightStateControl.xaml.cs">
       <DependentUpon>LightStateControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PoseControl.xaml.cs">
-      <DependentUpon>PoseControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -86,6 +77,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\KingpinStateReporterViewModel.cs" />
+    <Compile Include="ViewModel\KingpinStatusReporterViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelFactory.cs" />
+    <Compile Include="View\Converters.cs" />
+    <Compile Include="View\KingpinStateView.xaml.cs">
+      <DependentUpon>KingpinStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KingpinStatusView.xaml.cs">
+      <DependentUpon>KingpinStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PoseView.xaml.cs">
+      <DependentUpon>PoseView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,23 +124,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KingpinStateControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="KingpinStatusControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LightStateControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PoseControl.xaml">
+    <Page Include="ResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceDictionary.xaml">
+    <Page Include="View\KingpinStateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KingpinStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PoseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

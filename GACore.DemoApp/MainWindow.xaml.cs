@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using GACore.Controls.ViewModel;
 
 namespace GACore.DemoApp
 {
@@ -10,6 +11,16 @@ namespace GACore.DemoApp
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			HandleViewModels();
+		}
+
+		private void HandleViewModels()
+		{
+			FooKingpin kingpin = (FooKingpin)FindResource("fooKingpin");
+			KingpinStateReporterViewModel viewModel = ViewModelFactory.GetKingpinStateReporterViewModel(kingpin);
+
+			kingpinStateView.DataContext = viewModel;
 		}
 
 		private void RandomizeButton_Click(object sender, RoutedEventArgs e)
