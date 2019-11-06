@@ -73,6 +73,7 @@
     <Compile Include="SemVerData.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Trigonometry.cs" />
+    <Compile Include="Utility\Messenger.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GACore.Architecture\GACore.Architecture.csproj">

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NLog;
+using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GACore
 {
@@ -24,6 +21,8 @@ namespace GACore
 				HandleModelUpdate();
 			}
 		}
+
+		public Logger Logger { get; } = NLog.NLogManager.Instance.GetFileTargetLogger("ViewModel");
 
 		protected virtual void HandleModelUpdate()
 		{
