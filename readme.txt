@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.16.0 (6th Nov 19)
+
+* Adds messenger utility for inter-view model signalling. 
+* Adds logger for view models
+
 v1.15.0 (29th Oct 19)
 
 * Switches to MVVM pattern for KingpinState and KingpinStatus views. 
