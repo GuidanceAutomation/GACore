@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="AbstractViewModel.cs" />
     <Compile Include="BrushCollection.cs" />
+    <Compile Include="Command\CustomCommand.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />

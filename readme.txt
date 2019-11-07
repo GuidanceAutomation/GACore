@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.17.0 (6th Nov 19)
+
+* Adds CustomCommand object for MVVM
+
 v1.16.0 (6th Nov 19)
 
 * Adds messenger utility for inter-view model signalling. 
