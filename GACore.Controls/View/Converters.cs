@@ -1,14 +1,9 @@
 ﻿using GACore.Architecture;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using GACore.Controls;
-using System.Windows.Media;
 using GACore.Extensions;
+using System;
+using System.Globalization;
+using System.Windows.Data;
+using System.Windows.Media;
 
 namespace GACore.Controls.View
 {

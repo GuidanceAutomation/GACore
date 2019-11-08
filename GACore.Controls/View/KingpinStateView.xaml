@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:GACore.Controls.View"
              xmlns:controls="clr-namespace:GACore.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             DataContextChanged="UserControl_DataContextChanged">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -54,6 +53,6 @@
             </controls:LabelContentControl>
             <local:PoseView DataContext="{Binding KingpinState}"/>
         </StackPanel>
-        <local:KingpinStatusView x:Name="ksView" Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
+        <local:KingpinStatusView x:Name="ksView" Grid.RowSpan="2" Grid.Column="1" DataContext="{Binding Path=KingpinState}" VerticalAlignment="Center" Margin="0,1.5,3,0" />
     </Grid>
 </UserControl>

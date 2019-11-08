@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.17.1 (8th Nov 19)
+
+* View Bugfix
+
 v1.17.0 (6th Nov 19)
 
 * Adds CustomCommand object for MVVM
