@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.17.2 (12th Nov 19)
+
+* Extended WPF Toolkit (http://schemas.xceed.com/wpf/xaml/toolkit) style sheet
+
 v1.17.1 (8th Nov 19)
 
 * View Bugfix
