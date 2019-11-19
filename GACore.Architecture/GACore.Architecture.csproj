@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerators.cs" />
+    <Compile Include="ICollectionModel.cs" />
+    <Compile Include="ICollectionViewModel.cs" />
     <Compile Include="IKingpinState.cs" />
     <Compile Include="IKingpinStateReporter.cs" />
     <Compile Include="IKingpinStatusReporter.cs" />
     <Compile Include="IRefresh.cs" />
     <Compile Include="IResults.cs" />
+    <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
