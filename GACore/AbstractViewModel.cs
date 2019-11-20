@@ -1,4 +1,5 @@
 ﻿using GACore.Architecture;
+using GACore.NLog;
 using NLog;
 using System;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace GACore
 			}
 		}
 
-		public Logger Logger { get; } = NLog.NLogManager.Instance.GetFileTargetLogger("ViewModel");
+		public Logger Logger { get; } = LoggerFactory.GetStandardLogger(StandardLogger.ViewModel);
 
 		protected virtual void HandleModelUpdate()
 		{

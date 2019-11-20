@@ -7,4 +7,9 @@
 		Amber = 2,
 		Green = 3
 	}
+
+	public enum StandardLogger
+	{
+		ViewModel = 0
+	}
 }

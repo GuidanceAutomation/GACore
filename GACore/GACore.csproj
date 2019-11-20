@@ -69,6 +69,7 @@
     <Compile Include="KingpinStateData.cs" />
     <Compile Include="NLog\ExtensionMethods.cs" />
     <Compile Include="NLog\LayoutFactory.cs" />
+    <Compile Include="NLog\LoggerFactory.cs" />
     <Compile Include="NLog\NLogManager.cs" />
     <Compile Include="NLog\TargetFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
