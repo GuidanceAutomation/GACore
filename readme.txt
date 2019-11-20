@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.18.0 (20th Nov 19)
+
+* Adds Abstract Collection View Model for self maintaining observable collection of view models.
+
 v1.17.2 (12th Nov 19)
 
 * Extended WPF Toolkit (http://schemas.xceed.com/wpf/xaml/toolkit) style sheet
