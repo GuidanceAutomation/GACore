@@ -8,12 +8,6 @@ namespace GACore
 	/// </summary>
 	public struct BrushCollection
 	{
-		private readonly string text;
-
-		private readonly Brush background;
-
-		private readonly Brush foreground;
-
 		public BrushCollection(string text, Brush foreground, Brush background)
 		{
 			if (string.IsNullOrEmpty(text)) throw new ArgumentOutOfRangeException("text");
@@ -22,19 +16,19 @@ namespace GACore
 
 			if (background == null) throw new ArgumentNullException("background");
 
-			this.text = text;
-			this.foreground = foreground;
-			this.background = background;
+			this.Text = text;
+			this.Foreground = foreground;
+			this.Background = background;
 		}
 
 		public string ToBrushCollectionString() => string.Format("Text:{0} Foreground:{1} Background:{2}", Text, Foreground, Background);
 
 		public override string ToString() => ToBrushCollectionString();
 
-		public Brush Background => background;
+		public Brush Background { get; }
 
-		public Brush Foreground => foreground;
+		public Brush Foreground { get; }
 
-		public string Text => text;
+		public string Text { get; }
 	}
 }

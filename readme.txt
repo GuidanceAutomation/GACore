@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.19.0 (21st Nov 19)
+
+* Adds GetTempFilenameWithExtension to tools
+
 v1.18.0 (20th Nov 19)
 
 * Adds Abstract Collection View Model for self maintaining observable collection of view models.

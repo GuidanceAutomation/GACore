@@ -31,11 +31,6 @@ namespace GACore
 			return new BrushCollection("Unknown", Brushes.Crimson, Brushes.White);
 		}
 
-		private readonly static HashSet<ExtendedDataFaultStatus> exDataFaultStates = new HashSet<ExtendedDataFaultStatus>()
-		{
-			ExtendedDataFaultStatus.Fault
-		};
-
 		public static bool IsInFault(this IKingpinState kingpinState)
 		{
 			if (kingpinState.PositionControlStatus.IsFault()) return true;
@@ -51,31 +46,28 @@ namespace GACore
 
 		public static bool IsFault(this ExtendedDataFaultStatus exFaultStatus) => ExDataFaultStates.Contains(exFaultStatus);
 
-		public static HashSet<ExtendedDataFaultStatus> ExDataFaultStates => exDataFaultStates;
+		public static HashSet<ExtendedDataFaultStatus> ExDataFaultStates { get; } = new HashSet<ExtendedDataFaultStatus>()
+		{
+			ExtendedDataFaultStatus.Fault
+		};
 
-		private readonly static HashSet<DynamicLimiterStatus> dynamicFaultStates = new HashSet<DynamicLimiterStatus>()
+		public static HashSet<DynamicLimiterStatus> DynamicFaultStates { get; } = new HashSet<DynamicLimiterStatus>()
 			{
 				DynamicLimiterStatus.MotorFault
 			};
 
-		private readonly static HashSet<NavigationStatus> navigationFaultStates = new HashSet<NavigationStatus>()
+		public static HashSet<NavigationStatus> NavigationFaultStates { get; } = new HashSet<NavigationStatus>()
 			{
 				NavigationStatus.AssociationFailure,
 				NavigationStatus.HighUncertainty,
 				NavigationStatus.Lost
 			};
 
-		private readonly static HashSet<PositionControlStatus> pcsFaultStates = new HashSet<PositionControlStatus>()
+		public static HashSet<PositionControlStatus> PCSFaultStates { get; } = new HashSet<PositionControlStatus>()
 			{
 				PositionControlStatus.OutOfPosition,
 				PositionControlStatus.WaypointDiscontinuity
 			};
-
-		public static HashSet<DynamicLimiterStatus> DynamicFaultStates => dynamicFaultStates;
-
-		public static HashSet<NavigationStatus> NavigationFaultStates => navigationFaultStates;
-
-		public static HashSet<PositionControlStatus> PCSFaultStates => pcsFaultStates;
 
 		public static bool IsFault(this PositionControlStatus positionControlStatus) => PCSFaultStates.Contains(positionControlStatus);
 
