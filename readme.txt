@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.19.2 (21st Nov 19)
+
+* AbstractCollectionViewModel bugfix.
+
 v1.19.1 (21st Nov 19)
 
 * ViewModel HandleModelUpdate() now returns old and new values to faciltate better event handling.
