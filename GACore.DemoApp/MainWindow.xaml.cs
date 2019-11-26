@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using GACore.Controls.ViewModel;
+using NLog;
 
 namespace GACore.DemoApp
 {
@@ -12,6 +13,7 @@ namespace GACore.DemoApp
 		{
 			InitializeComponent();
 
+			NLog.NLogManager.Instance.LogLevel = LogLevel.Trace;
 			HandleViewModels();
 		}
 

@@ -31,7 +31,11 @@ namespace GACore
 
 		private async Task HandleAddCollectionItemModel(V colllectionItemModel)
 		{
-			if (colllectionItemModel == null) return;
+			if (colllectionItemModel == null)
+			{
+				Logger.Warn("[{0}] HandleAddCollectionItemModel() colllectionItemModel was null", GetType().Name);
+				return;
+			}
 
 			U collectionItemViewModel = new U() { Model = colllectionItemModel };
 
@@ -39,6 +43,8 @@ namespace GACore
 			{
 				viewModels.Add(collectionItemViewModel);
 			}));
+
+			Logger.Warn("[{0}] HandleAddCollectionItemModel() added: {1}", GetType().Name, colllectionItemModel);
 		}
 
 		private async void HandleCollectionRefresh()
@@ -56,13 +62,17 @@ namespace GACore
 			}
 		}
 
-		protected override void HandleModelUpdate()
+		protected override void HandleModelUpdate(T oldValue, T newValue)
 		{
-			if (Model != null) Model.Added += Model_Added;
-			if (Model != null) Model.Removed += Model_Removed;
+			if (oldValue != null) Model.Added -= Model_Added;
+			if (oldValue != null) Model.Removed -= Model_Removed;
+
+			if (newValue != null) Model.Added += Model_Added;
+			if (newValue != null) Model.Removed += Model_Removed;
 
 			HandleCollectionRefresh();
-			base.HandleModelUpdate();
+
+			base.HandleModelUpdate(oldValue, newValue);
 		}
 
 		public abstract U GetViewModelForModel(V model);
@@ -91,6 +101,8 @@ namespace GACore
 
 		private async void Model_Added(V obj)
 		{
+			Logger.Trace("[{0}] Model_Added()", GetType().Name);
+
 			await HandleAddCollectionItemModel(obj);
 		}
 

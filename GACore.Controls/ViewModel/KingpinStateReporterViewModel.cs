@@ -6,7 +6,11 @@ namespace GACore.Controls.ViewModel
 	{
 		private IKingpinState kingpinState = null;
 
-		protected override void HandleModelUpdate() => Refresh();
+		protected override void HandleModelUpdate(IKingpinStateReporter oldValue, IKingpinStateReporter newValue)
+		{
+			base.HandleModelUpdate(oldValue, newValue);
+			Refresh();
+		}
 
 		public IKingpinState KingpinState
 		{

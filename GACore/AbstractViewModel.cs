@@ -3,6 +3,7 @@ using GACore.NLog;
 using NLog;
 using System;
 using System.ComponentModel;
+using System.Windows;
 using System.Runtime.CompilerServices;
 
 namespace GACore
@@ -19,15 +20,20 @@ namespace GACore
 			get { return model; }
 			set
 			{
+				T oldValue = model;
 				model = value;
-				HandleModelUpdate();
+				HandleModelUpdate(oldValue, model);
 			}
 		}
-
+			
 		public Logger Logger { get; } = LoggerFactory.GetStandardLogger(StandardLogger.ViewModel);
 
-		protected virtual void HandleModelUpdate()
+		protected virtual void HandleModelUpdate(T oldValue, T newValue)
 		{
+			Logger.Trace("[{0}] HandleModelUpdate() oldValue: {1}, newValue: {2}",
+				GetType().Name, 
+				oldValue == null? "null" : oldValue.ToString(),
+				newValue == null ? "null" : newValue.ToString());
 		}
 
 		public AbstractViewModel()
