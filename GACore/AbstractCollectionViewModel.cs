@@ -1,7 +1,9 @@
 ﻿using GACore.Architecture;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -30,6 +32,8 @@ namespace GACore
 
 		private bool isDisposed = false;
 
+		private SemaphoreSlim semaphoreSlim = new SemaphoreSlim(1, 1);
+
 		private async Task HandleAddCollectionItemModel(V collectionItemModel)
 		{
 			if (collectionItemModel == null)
@@ -38,25 +42,40 @@ namespace GACore
 				return;
 			}
 
-			// To solve race condition when getting an item added while the model is changed. 
-			if (viewModels.Select(e => e.Model).Any(e => e.Equals(collectionItemModel)))
+			await semaphoreSlim.WaitAsync();
+
+			try
 			{
-				Logger.Warn("[{0}] HandleAddCollectionItemModel() viewModels already contains a collectionItemViewModel for this collectionItemModel", GetType().Name);
-				return;
+				// To solve race condition when getting an item added while the model is changed. 
+				if (viewModels.Select(e => e.Model).Any(e => e.Equals(collectionItemModel)))
+				{
+					Logger.Warn("[{0}] HandleAddCollectionItemModel() viewModels already contains a collectionItemViewModel for this collectionItemModel", GetType().Name);
+					return;
+				}
+
+				U collectionItemViewModel = new U() { Model = collectionItemModel };
+
+				await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+				{
+					viewModels.Add(collectionItemViewModel);
+				}));
+
+				Logger.Trace("[{0}] HandleAddCollectionItemModel() added: {1}", GetType().Name, collectionItemModel);
 			}
-
-			U collectionItemViewModel = new U() { Model = collectionItemModel };
-
-			await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+			catch(Exception ex)
 			{
-				viewModels.Add(collectionItemViewModel);
-			}));
-
-			Logger.Warn("[{0}] HandleAddCollectionItemModel() added: {1}", GetType().Name, collectionItemModel);
+				Logger.Error(ex);
+			}
+			finally
+			{
+				semaphoreSlim.Release();
+			}
 		}
 
 		private async void HandleCollectionRefresh()
 		{
+			Logger.Trace("[{0}] HandleCollectionRefresh()", GetType().Name);
+
 			await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
 			{
 				viewModels.Clear();
@@ -64,7 +83,11 @@ namespace GACore
 
 			if (Model == null) return;
 
-			foreach (V model in Model.GetModels())
+			IEnumerable<V> existingModels = Model.GetModels();
+
+			Logger.Trace("[{0}] HandleCollectionRefresh() adding {1} existing model(s)", GetType().Name, existingModels.Count());
+
+			foreach (V model in existingModels)
 			{
 				await HandleAddCollectionItemModel(model);
 			}
@@ -91,19 +114,33 @@ namespace GACore
 				Logger.Warn("[{0}] Model_Removed() obj was null", GetType().Name);
 				return;
 			}
+			
+			await semaphoreSlim.WaitAsync();
 
-			U viewModel = GetViewModelForModel(obj);
-
-			if (viewModel == null)
+			try
 			{
-				Logger.Warn("[{0}] Model_Removed() GetViewModelForModel() returned null", GetType().Name);
-				return;
+				U viewModel = GetViewModelForModel(obj);
+
+				if (viewModel == null)
+				{
+					Logger.Warn("[{0}] Model_Removed() GetViewModelForModel() returned null", GetType().Name);
+					return;
+				}
+
+				await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+				{
+					viewModels.Remove(viewModel);
+				}));
+			}
+			catch (Exception ex)
+			{
+				Logger.Error(ex);
 			}
 
-			await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+			finally
 			{
-				viewModels.Remove(viewModel);
-			}));
+				semaphoreSlim.Release();
+			}
 		}
 
 		private async void Model_Added(V obj)
