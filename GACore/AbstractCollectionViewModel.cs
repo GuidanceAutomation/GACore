@@ -1,6 +1,7 @@
 ﻿using GACore.Architecture;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -29,22 +30,29 @@ namespace GACore
 
 		private bool isDisposed = false;
 
-		private async Task HandleAddCollectionItemModel(V colllectionItemModel)
+		private async Task HandleAddCollectionItemModel(V collectionItemModel)
 		{
-			if (colllectionItemModel == null)
+			if (collectionItemModel == null)
 			{
-				Logger.Warn("[{0}] HandleAddCollectionItemModel() colllectionItemModel was null", GetType().Name);
+				Logger.Warn("[{0}] HandleAddCollectionItemModel() collectionItemModel was null", GetType().Name);
 				return;
 			}
 
-			U collectionItemViewModel = new U() { Model = colllectionItemModel };
+			// To solve race condition when getting an item added while the model is changed. 
+			if (viewModels.Select(e => e.Model).Any(e => e.Equals(collectionItemModel)))
+			{
+				Logger.Warn("[{0}] HandleAddCollectionItemModel() viewModels already contains a collectionItemViewModel for this collectionItemModel", GetType().Name);
+				return;
+			}
+
+			U collectionItemViewModel = new U() { Model = collectionItemModel };
 
 			await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
 			{
 				viewModels.Add(collectionItemViewModel);
 			}));
 
-			Logger.Warn("[{0}] HandleAddCollectionItemModel() added: {1}", GetType().Name, colllectionItemModel);
+			Logger.Warn("[{0}] HandleAddCollectionItemModel() added: {1}", GetType().Name, collectionItemModel);
 		}
 
 		private async void HandleCollectionRefresh()
@@ -64,15 +72,14 @@ namespace GACore
 
 		protected override void HandleModelUpdate(T oldValue, T newValue)
 		{
-			if (oldValue != null) Model.Added -= Model_Added;
-			if (oldValue != null) Model.Removed -= Model_Removed;
+			if (oldValue != null) oldValue.Added -= Model_Added;
+			if (oldValue != null) oldValue.Removed -= Model_Removed;
 
-			if (newValue != null) Model.Added += Model_Added;
-			if (newValue != null) Model.Removed += Model_Removed;
-
-			HandleCollectionRefresh();
+			if (newValue != null) newValue.Added += Model_Added;
+			if (newValue != null) newValue.Removed += Model_Removed;
 
 			base.HandleModelUpdate(oldValue, newValue);
+			HandleCollectionRefresh();
 		}
 
 		public abstract U GetViewModelForModel(V model);
