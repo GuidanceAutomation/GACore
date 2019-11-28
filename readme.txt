@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.19.4 (28th Nov 19)
+
+* Adds missing OnNotifyPropertyChanged to AbstractViewModel.
+
 v1.19.3 (26th Nov 19)
 
 * AbstractCollectionViewModel bugfix.
