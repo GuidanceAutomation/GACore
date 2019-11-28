@@ -23,6 +23,7 @@ namespace GACore
 				T oldValue = model;
 				model = value;
 				HandleModelUpdate(oldValue, model);
+				OnNotifyPropertyChanged();
 			}
 		}
 			
