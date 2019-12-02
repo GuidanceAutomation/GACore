@@ -3,7 +3,6 @@ using GACore.NLog;
 using NLog;
 using System;
 using System.ComponentModel;
-using System.Windows;
 using System.Runtime.CompilerServices;
 
 namespace GACore

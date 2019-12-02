@@ -7,6 +7,7 @@
         xmlns:view="clr-namespace:GACore.Controls.View;assembly=GACore.Controls"
         xmlns:gaCoreUC="clr-namespace:GACore.Controls;assembly=GACore.Controls"
         mc:Ignorable="d"
+        xmlns:uiView="clr-namespace:GACore.UI.View;assembly=GACore.UI"
         Title="GACore DemoApp" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
@@ -16,6 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton" />
             <local:FooKingpin x:Key="fooKingpin" />
+            <local:FooIPAddressable x:Key="fooIPAddressable" />
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -28,6 +30,7 @@
             <gaCoreUC:LabelContentControl Header="Randomize">
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
+            <uiView:IPAddressView/>
             <gaCoreUC:CallButtonControl
                 Alias="Call Button: Generic"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"

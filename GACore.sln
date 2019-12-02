@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GACore.Extensions", "GACore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GACore.Extensions.Test", "GACore.Extensions.Test\GACore.Extensions.Test.csproj", "{1171F0A7-6606-4FF5-9A52-8AE2CF59542B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GACore.UI", "GACore.UI\GACore.UI.csproj", "{516460C8-645D-40E7-8BDC-343471405656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{1171F0A7-6606-4FF5-9A52-8AE2CF59542B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1171F0A7-6606-4FF5-9A52-8AE2CF59542B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1171F0A7-6606-4FF5-9A52-8AE2CF59542B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516460C8-645D-40E7-8BDC-343471405656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516460C8-645D-40E7-8BDC-343471405656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516460C8-645D-40E7-8BDC-343471405656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516460C8-645D-40E7-8BDC-343471405656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.20.0 (2nd Dec 19)
+
+* Adds GACore.UI assembly
+* Adds IPAddressView for MVVM
+
 v1.19.4 (28th Nov 19)
 
 * Adds missing OnNotifyPropertyChanged to AbstractViewModel.

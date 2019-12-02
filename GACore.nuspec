@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.19.4</version>
+    <version>1.20.0</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
@@ -27,5 +27,6 @@
 		<file src="GACore.Architecture\bin\Release\GACore.Architecture.dll" target="lib\net472" />
 		<file src="GACore.Controls\bin\Release\GACore.Controls.dll" target="lib\net472" />
 		<file src="GACore.Extensions\bin\Release\GACore.Extensions.dll" target="lib\net472" />
+		<file src="GACore.UI\bin\Release\GACore.UI.dll" target="lib\net472" />
   </files>
 </package>
