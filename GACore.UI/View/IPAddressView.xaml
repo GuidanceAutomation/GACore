@@ -22,20 +22,19 @@
                         <Setter Property="Maximum" Value="255" />
                         <Setter Property="ShowButtonSpinner" Value="False" />
                         <Setter Property="TextAlignment" Value="Center" />
-                        <Setter Property="DefaultValue" Value="0" />
                         <Setter Property="ClipValueToMinMax" Value="True" />
                         <Setter Property="DisplayDefaultValueOnEmptyText" Value="True" />
                         <Setter Property="Margin" Value="6"/>         
                     </Style>
                 </ResourceDictionary>
             </StackPanel.Resources>
-            <toolkit:IntegerUpDown Value="{Binding Path=ByteA, FallbackValue='-1'}" />
+            <toolkit:IntegerUpDown Value="{Binding Path=ByteA, FallbackValue='0'}" DefaultValue="0"/>
             <TextBlock FontWeight="Bold">.</TextBlock>
-            <toolkit:IntegerUpDown Value="{Binding Path=ByteB, FallbackValue='-1'}" />
+            <toolkit:IntegerUpDown Value="{Binding Path=ByteB, FallbackValue='1'}" DefaultValue="0"/>
             <TextBlock FontWeight="Bold">.</TextBlock>
-            <toolkit:IntegerUpDown Value="{Binding Path=ByteC, FallbackValue='-1'}" />
+            <toolkit:IntegerUpDown Value="{Binding Path=ByteC, FallbackValue='2'}" DefaultValue="0"/>
             <TextBlock FontWeight="Bold">.</TextBlock>
-            <toolkit:IntegerUpDown Value="{Binding Path=ByteD, FallbackValue='-1'}" />
+            <toolkit:IntegerUpDown Value="{Binding Path=ByteD, FallbackValue='3'}" DefaultValue="0"/>
         </StackPanel>
     </gaCoreC:LabelContentControl>
 </UserControl>

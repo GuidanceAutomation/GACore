@@ -5,7 +5,7 @@ namespace GACore.UI.ViewModel
 {
 	public class IPAddressViewModel : AbstractViewModel<IIPAddressable>
 	{
-		private byte[] ipAddressBytes = new byte[4] { 0, 0, 0, 0 };
+		private byte[] ipAddressBytes = new byte[4] { 169, 254, 0, 0 };
 
 		public int ByteA
 		{
@@ -35,7 +35,9 @@ namespace GACore.UI.ViewModel
 
 		public int ByteC
 		{
-			get { return ipAddressBytes[2]; }
+			get { 
+					return ipAddressBytes[2]; 
+				 }
 			set
 			{
 				if (ipAddressBytes[2] != value)
@@ -78,7 +80,7 @@ namespace GACore.UI.ViewModel
 			get { return new IPAddress(ipAddressBytes); }
 			set
 			{
-				byte[] ipV4ByteValue = value.MapToIPv4().GetAddressBytes();
+				byte[] ipV4ByteValue = (value == null) ? new byte[4]{ 169, 254, 0, 0 } : value.MapToIPv4().GetAddressBytes();
 
 				if (ipAddressBytes != ipV4ByteValue)
 				{

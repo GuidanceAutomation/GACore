@@ -8,10 +8,14 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.20.1 (3rd Dec 19)
+
+* IPAddressView default value bugfix.
+
 v1.20.0 (2nd Dec 19)
 
-* Adds GACore.UI assembly
-* Adds IPAddressView for MVVM
+* Adds GACore.UI assembly.
+* Adds IPAddressView for MVVM.
 
 v1.19.4 (28th Nov 19)
 
