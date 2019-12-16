@@ -61,6 +61,36 @@ namespace GACore.Controls.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon A_Green {
+            get {
+                object obj = ResourceManager.GetObject("A_Green", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap A_Green_256 {
+            get {
+                object obj = ResourceManager.GetObject("A_Green_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap A_Green_512 {
+            get {
+                object obj = ResourceManager.GetObject("A_Green_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;!--This file is NOT compatible with Silverlight--&gt;
         ///&lt;Viewbox xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; Stretch=&quot;Uniform&quot;&gt;
@@ -77,6 +107,16 @@ namespace GACore.Controls.Properties {
         internal static string BannerQ45Iso_Color {
             get {
                 return ResourceManager.GetString("BannerQ45Iso_Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Nucleus {
+            get {
+                object obj = ResourceManager.GetObject("Nucleus", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }
