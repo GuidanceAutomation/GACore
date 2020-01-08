@@ -12,6 +12,8 @@ namespace GACore.DemoApp
 	{
 		public MainWindow()
 		{
+			BootStrapper.Activate();
+
 			InitializeComponent();
 
 			NLog.NLogManager.Instance.LogLevel = LogLevel.Trace;
@@ -44,6 +46,11 @@ namespace GACore.DemoApp
 		{
 			FooKingpin kingpin = (FooKingpin)FindResource("fooKingpin");
 			kingpin.SetGood();
+		}
+
+		private void wizardButton_Click(object sender, RoutedEventArgs e)
+		{
+			Service.DialogService.CreateFooWizardWindow().ShowDialog();
 		}
 	}
 }

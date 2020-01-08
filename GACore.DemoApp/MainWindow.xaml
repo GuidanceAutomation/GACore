@@ -7,19 +7,24 @@
         xmlns:view="clr-namespace:GACore.Controls.View;assembly=GACore.Controls"
         xmlns:gaCoreUC="clr-namespace:GACore.Controls;assembly=GACore.Controls"
         mc:Ignorable="d"
-        xmlns:uiView="clr-namespace:GACore.UI.View;assembly=GACore.UI"
+        xmlns:demoView="clr-namespace:GACore.DemoApp.View"
+        xmlns:uiView="clr-namespace:GACore.UI.View;assembly=GACore.UI"        
         Title="GACore DemoApp" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonCheckboxButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton" />
             <local:FooKingpin x:Key="fooKingpin" />
             <local:FooIPAddressable x:Key="fooIPAddressable" />
         </ResourceDictionary>
     </Window.Resources>
+    <Window.Style>
+        <Style BasedOn="{StaticResource MainWindow}" TargetType="Window" />
+    </Window.Style>
     <Grid>
         <StackPanel>
             <gaCoreUC:IPV4Control IPV4String="192.168.1.1" />
@@ -31,6 +36,33 @@
                 <Button x:Name="randomizeButton" Click="RandomizeButton_Click">Randomize</Button>
             </gaCoreUC:LabelContentControl>
             <uiView:IPAddressView/>
+            <gaCoreUC:LabelContentControl Header="Show Wizard">
+                <Button x:Name="wizardButton" Click="wizardButton_Click">
+                    Show
+                </Button>
+            </gaCoreUC:LabelContentControl>
+            <StackPanel>
+                <StatusBar>Ribbon Controls</StatusBar>
+                <StackPanel Orientation="Horizontal">
+                    <gaCoreUC:CheckboxButtonControl Style="{StaticResource RibbonCheckboxButtonControl}" IsEnabled="False"
+                        IsChecked="False">
+                        <TextBlock TextWrapping="Wrap">Disabled Uncheck</TextBlock>
+                    </gaCoreUC:CheckboxButtonControl>
+                    <gaCoreUC:CheckboxButtonControl Style="{StaticResource RibbonCheckboxButtonControl}" IsEnabled="False"
+                        IsChecked="True">
+                        <TextBlock TextWrapping="Wrap">Disabled Check</TextBlock>
+                    </gaCoreUC:CheckboxButtonControl>
+                    <gaCoreUC:CheckboxButtonControl Style="{StaticResource RibbonCheckboxButtonControl}" IsEnabled="True"
+                        IsChecked="False">
+                        <TextBlock TextWrapping="Wrap">Enabled Uncheck</TextBlock>
+                    </gaCoreUC:CheckboxButtonControl>
+                    <gaCoreUC:CheckboxButtonControl Style="{StaticResource RibbonCheckboxButtonControl}" IsEnabled="True"
+                        IsChecked="True">
+                        <TextBlock TextWrapping="Wrap">Enabled Check</TextBlock>
+                    </gaCoreUC:CheckboxButtonControl>
+                    <demoView:FooBoolObjViewModelView/>
+                </StackPanel>
+            </StackPanel>
             <gaCoreUC:CallButtonControl
                 Alias="Call Button: Generic"
                 IsPressed="{Binding Source={StaticResource fooCallButton}, Path=IsPressed}"

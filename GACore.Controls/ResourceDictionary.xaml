@@ -5,6 +5,19 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- Font Sizes-->
     <system:Double x:Key="Text">14</system:Double>
+    <!-- Color Palete -->
+    <Color x:Key="Purple">#9C1A87</Color>
+    <Color x:Key="Green">#C4D92E</Color>
+    <Color x:Key="Gray">#595959</Color>
+    <Color x:Key="LightGray">#eeeeee</Color>
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="SolidPurpleBrush" Color="{StaticResource Purple}" />
+    <SolidColorBrush x:Key="SolidGreenBrush" Color="{StaticResource Green}" />
+    <SolidColorBrush x:Key="SolidGrayBrush" Color="{StaticResource Gray}" />
+    <SolidColorBrush x:Key="SolidLightGrayBrush" Color="{StaticResource LightGray}" />
+    <!-- Images -->
+    <BitmapImage x:Key="GA_Logo_256" UriSource="./Resources/A_Green_256.png" />
+    <BitmapImage x:Key="GA_Logo_512" UriSource="./Resources/A_Green_512.png" />
     <!-- Styles -->
     <Style TargetType="{x:Type Control}" x:Key="BaseControlStyle">
         <Setter Property="FontFamily" Value="Calibri" />
@@ -63,5 +76,25 @@
     <Style TargetType="{x:Type toolkit:TimeSpanUpDown}" BasedOn="{StaticResource BaseControlStyle}">
         <Setter Property="Height" Value="23" />
         <Setter Property="Width" Value="75" />
+    </Style>
+    <Style TargetType="{x:Type toolkit:WizardPage}" BasedOn="{StaticResource BaseControlStyle}">
+        <Setter Property="ExteriorPanelBackground" Value="{StaticResource SolidGreenBrush}" />
+        <Setter Property="ExteriorPanelContent">
+            <Setter.Value>
+                <Image Source="{Binding Source={StaticResource GA_Logo_512}}"
+                       Width="150"
+                       Height="150"                       
+                       VerticalAlignment="Top"                       
+                       HorizontalAlignment="Left">
+                </Image>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Window Styles -->
+    <Style x:Key="MainWindow" TargetType="{x:Type Window}">
+        <Setter Property="Icon" Value="pack://application:,,,/GACore.Controls;component/Resources/Nucleus.ico"/>
+    </Style>
+    <Style x:Key="Dialog" TargetType="{x:Type Window}">
+        <Setter Property="Icon" Value="pack://application:,,,/GACore.Controls;component/Resources/A_Green.ico"/>
     </Style>
 </ResourceDictionary>

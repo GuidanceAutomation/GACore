@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.20.2 (16th Dec 19)
+
+* Improves styling of some UI elements. 
+
 v1.20.1 (3rd Dec 19)
 
 * IPAddressView default value bugfix.
