@@ -12,6 +12,8 @@ namespace GACore.DemoApp
 	{
 		public MainWindow()
 		{
+			BootStrapper.Activate();
+
 			InitializeComponent();
 
 			NLog.NLogManager.Instance.LogLevel = LogLevel.Trace;
