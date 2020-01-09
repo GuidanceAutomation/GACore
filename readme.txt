@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.21.0 (9th Jan 20)
+
+* Adds Button Control
+* Adds Checkbox Button Control
+
 v1.20.2 (16th Dec 19)
 
 * Improves styling of some UI elements. 

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.20.2</version>
+    <version>1.21.0</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Core components for Guidance Automation assemblies</description>
     <releaseNotes/>
-    <copyright>Copyright 2019</copyright>
+    <copyright>Copyright 2020</copyright>
     <tags></tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
