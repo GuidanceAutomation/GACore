@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrushDictionaries.cs" />
+    <Compile Include="ButtonControl.cs" />
     <Compile Include="CallButtonControl.cs" />
     <Compile Include="CheckboxButtonControl.cs" />
     <Compile Include="Converters.cs" />
@@ -150,7 +151,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\RibbonCheckboxButton.xaml">
+    <Page Include="Themes\RibbonControls.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
     <Page Include="View\KingpinStateView.xaml">

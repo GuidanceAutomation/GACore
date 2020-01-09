@@ -15,7 +15,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonCheckboxButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonControls.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton" />
             <local:FooKingpin x:Key="fooKingpin" />
