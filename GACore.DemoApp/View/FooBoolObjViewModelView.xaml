@@ -13,14 +13,13 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonCheckboxButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonControls.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <gaCoreUC:CheckboxButtonControl Style="{StaticResource RibbonCheckboxButtonControl}" IsEnabled="True"
-                        IsChecked="{Binding IsSet}">
-            <TextBlock TextWrapping="Wrap">Badgers</TextBlock>
+                        IsChecked="{Binding IsSet}" CheckedText="Active" UncheckedText="Inactive">     
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <i:InvokeCommandAction
