@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace GACore
 {
@@ -9,35 +7,20 @@ namespace GACore
 	/// </summary>
 	/// <typeparam name="T">Key (struct)</typeparam>
 	/// <typeparam name="U">Mail (class)</typeparam>
-	public abstract class GenericMailbox<T, U> : INotifyPropertyChanged where U : class
+	public abstract class GenericMailbox<T, U> where U : class
 	{
-		private readonly T key;
-
-		private U mail;
-
 		public GenericMailbox(T key, U mail)
 		{
 			if (key == null) throw new ArgumentNullException("key");
 
-			if (mail == null) throw new ArgumentNullException("mail");
-
-			this.key = key;
-			this.mail = mail;
+			Key = key;
+			Mail = mail ?? throw new ArgumentNullException("mail");
+			LastUpdate = DateTime.Now;
 		}
 
-		public U Mail
-		{
-			get { return mail; }
+		public U Mail { get; private set; } = null;
 
-			private set
-			{
-				if (mail != value)
-				{
-					mail = value;
-					OnNotifyPropertyChanged();
-				}
-			}
-		}
+		public DateTime LastUpdate { get; private set; } = DateTime.MinValue;
 
 		public override int GetHashCode() => Key.GetHashCode();
 
@@ -50,7 +33,6 @@ namespace GACore
 			else
 			{
 				GenericMailbox<T, U> other = (GenericMailbox<T, U>)obj;
-
 				return Key.Equals(other.Key);
 			}
 		}
@@ -59,20 +41,26 @@ namespace GACore
 
 		public override string ToString() => ToMailBoxString();
 
+		public event Action Updated;
+
+		private void OnUpdated()
+		{
+			if(Updated != null)
+			{
+				foreach(Action handler in Updated.GetInvocationList())
+				{
+					handler.BeginInvoke(null, null);
+				}
+			}
+		}
+
 		public void Update(U newMail)
 		{
-			if (newMail == null) throw new ArgumentNullException("newMail");
-
-			Mail = newMail;
+			Mail = newMail ?? throw new ArgumentNullException("newMail");
+			LastUpdate = DateTime.Now;
+			OnUpdated();
 		}
 
-		public T Key => key;
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		private void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
+		public T Key { get; }
 	}
 }

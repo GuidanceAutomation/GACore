@@ -27,7 +27,7 @@ namespace GACore.Controls.ViewModel
 
 		public void Refresh()
 		{
-			KingpinState = Model != null ? Model.KingpinState : null;
+			KingpinState = Model?.KingpinState;
 		}
 	}
 }

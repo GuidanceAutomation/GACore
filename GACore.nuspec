@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>GACore</id>
-    <version>1.21.0</version>
+    <version>1.22.0-alpha00</version>
     <authors>Martin Davies, Callum Clarke</authors>
     <owners>Guidance Automation Ltd</owners>
 	<license type="expression">MIT</license>
