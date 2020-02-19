@@ -8,6 +8,13 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.22.0 (19th Feb 20)
+
+* Minor UI tweeks
+* Makes the dummy kingpin tool not use INotifyPropertyChanged
+* Cleans up generic mailbox
+
+
 v1.21.0 (9th Jan 20)
 
 * Adds Button Control
