@@ -5,19 +5,10 @@ using System.Runtime.CompilerServices;
 
 namespace GACore.DemoApp
 {
-	public class FooKingpin : INotifyPropertyChanged, IKingpinStateReporter
+	public class FooKingpin : IKingpinStateReporter
 	{
-		private IKingpinState kingpinState = new FooKingpinState();
 
-		public IKingpinState KingpinState
-		{
-			get { return kingpinState; }
-			set
-			{
-				kingpinState = value;
-				OnNotifyPropertyChanged();
-			}
-		}
+		public IKingpinState KingpinState { get; private set; } = new FooKingpinState();
 
 		public void Randomize()
 		{
@@ -31,13 +22,6 @@ namespace GACore.DemoApp
 
 		public FooKingpin()
 		{
-		}
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		private void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
