@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
+using System;
 using System.Threading;
-using NUnit.Framework;
+using GACore;
+using GACore.NLog;
+using NLog;
 
 namespace GACore.Test
 {
@@ -14,6 +13,12 @@ namespace GACore.Test
 		private AutoResetEvent propertyChangedSet = new AutoResetEvent(false);
 
 		private TimeSpan timeout { get; } = TimeSpan.FromSeconds(5);
+
+		[OneTimeSetUp]
+		public void OneTimeSetUp()
+		{
+			GACore.NLog.NLogManager.Instance.LogLevel = LogLevel.Trace;
+		}
 
 		[Test]
 		public void PropertyChanged()

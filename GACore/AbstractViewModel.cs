@@ -23,6 +23,8 @@ namespace GACore
 				model = value;
 				HandleModelUpdate(oldValue, model);
 				OnNotifyPropertyChanged();
+
+				Logger.Debug("[{0}] Model updated: {1}", GetType().Name, value != null ? value.GetType().Name : "null" );
 			}
 		}
 			

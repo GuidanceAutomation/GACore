@@ -69,6 +69,7 @@
     <Compile Include="TIPAddressRange.cs" />
     <Compile Include="TKingpinFaultDiagnosis.cs" />
     <Compile Include="TMaths.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="TResult.cs" />
     <Compile Include="TResultFactory.cs" />
     <Compile Include="TSemVerData.cs" />
