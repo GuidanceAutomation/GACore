@@ -8,6 +8,19 @@ namespace GACore.Test.Generics
 	public class TLimit
 	{
 		[Test]
+		public void Parameterless()
+		{
+			Limit<double> limit = new Limit<double>();
+
+			Assert.AreEqual(0, limit.Minimum);
+			Assert.AreEqual(0, limit.Maximum);
+
+			limit.Maximum = 100;
+			Assert.AreEqual(0, limit.Minimum);
+			Assert.AreEqual(100, limit.Maximum);
+		}
+
+		[Test]
 		[TestCase(0, 1)]
 		public void Limit_Init(int min, int max)
 		{

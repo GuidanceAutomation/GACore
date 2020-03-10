@@ -23,6 +23,11 @@ namespace GACore.Generics
 			this.maximum = maximum;
 		}
 
+		public Limit()
+			:this(default, default)
+		{
+		}
+
 		public T Maximum
 		{
 			get { return maximum; }
@@ -31,7 +36,7 @@ namespace GACore.Generics
 				lock (lockObject)
 				{
 					SanityCheck(minimum, value);
-					this.maximum = value;
+					maximum = value;
 				}
 			}
 		}
@@ -44,7 +49,7 @@ namespace GACore.Generics
 				lock (lockObject)
 				{
 					SanityCheck(value, maximum);
-					this.minimum = value;
+					minimum = value;
 				}
 			}
 		}

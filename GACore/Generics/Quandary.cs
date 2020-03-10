@@ -2,9 +2,10 @@
 {
 	public class Quandary<T>
 	{
-		private T final;
-
-		private T initial;
+		public Quandary()
+			: this(default, default)
+		{
+		}
 
 		/// <summary>
 		/// Construct an instance of a quandary object, allowing the clear definition
@@ -14,20 +15,12 @@
 		/// <param name="final">Instance of object defining the final state.</param>
 		public Quandary(T initial, T final)
 		{
-			this.initial = initial;
-			this.final = final;
+			Initial = initial;
+			Final = final;
 		}
 
-		public T Final
-		{
-			get { return final; }
-			set { this.final = value; }
-		}
+		public T Final { get; set; }
 
-		public T Initial
-		{
-			get { return initial; }
-			set { this.initial = value; }
-		}
+		public T Initial { get; set; }
 	}
 }
