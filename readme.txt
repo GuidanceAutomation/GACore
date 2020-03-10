@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.22.2 (10th Mar 20)
+
+* Adds parameterless constructors for generics for xaml support
+
 v1.22.1 (28th Feb 20)
 
 * Minor logging updates to AbstractViewModel<T>
