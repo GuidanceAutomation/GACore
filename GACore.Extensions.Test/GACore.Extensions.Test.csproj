@@ -67,6 +67,7 @@
     <Compile Include="TList_ExtensionMethods.cs" />
     <Compile Include="TPoint_ExtensionMethods.cs" />
     <Compile Include="TQueue_ExtensionMethods.cs" />
+    <Compile Include="TSize_ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
