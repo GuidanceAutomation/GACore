@@ -67,6 +67,7 @@
     <Compile Include="TGenericMailbox.cs" />
     <Compile Include="TGenericResult.cs" />
     <Compile Include="TIPAddressRange.cs" />
+    <Compile Include="TKeyedEnumerable.cs" />
     <Compile Include="TKingpinFaultDiagnosis.cs" />
     <Compile Include="TMaths.cs" />
     <Compile Include="Tools.cs" />

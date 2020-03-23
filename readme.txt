@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.24.0 (23rd Mar 20)
+
+* Adds IKeyedEnumerable
+* Adds Point quantize methods. 
+
 v1.23.0 (10th Mar 20)
 
 * Add extension methods for Size (subtract, scale & max)

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Enumerators.cs" />
     <Compile Include="IIPAddressable.cs" />
+    <Compile Include="IKeyedEnumerable.cs" />
     <Compile Include="IModelCollection.cs" />
     <Compile Include="ICollectionViewModel.cs" />
     <Compile Include="IKingpinState.cs" />

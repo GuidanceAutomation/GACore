@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System;
 
 namespace GACore.Extensions
 {
@@ -21,5 +22,13 @@ namespace GACore.Extensions
 		public static Vector GetVectorTo(this Point current, Point point) => new Vector(point.X - current.X, point.Y - current.Y);
 
 		public static bool IsNaN(this Point point) => double.IsNaN(point.X) || double.IsNaN(point.Y);
+
+		public static Point Quantize(this Point point, double quantizeStep)
+		{
+			double x = Math.Round(point.X.Quantize(quantizeStep));
+			double y = Math.Round(point.Y.Quantize(quantizeStep));
+
+			return new Point(x,y);
+		}
 	}
 }

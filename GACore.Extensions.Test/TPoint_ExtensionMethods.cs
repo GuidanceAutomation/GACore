@@ -8,6 +8,26 @@ namespace GACore.Extensions.Test
 	public class TPoint_ExtensionMethods
 	{
 		[Test]
+		public void Quantize_NaN()
+		{
+			Point point = new Point(double.NaN, 2.5);
+			Point quantized = point.Quantize(2);
+
+			Assert.AreEqual(double.NaN, quantized.X);
+			Assert.AreEqual(2, quantized.Y);
+		}
+
+		[Test]
+		public void Quantize()
+		{
+			Point point = new Point(1.6, 2.7);
+			Point quantized = point.Quantize(2);
+
+			Assert.AreEqual(2, quantized.X);
+			Assert.AreEqual(2, quantized.Y);
+		}
+
+		[Test]
 		[TestCase(0, 0, 1, 1)]
 		public void GetVectorTo(double x1, double y1, double x2, double y2)
 		{
