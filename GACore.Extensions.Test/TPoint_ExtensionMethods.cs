@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Windows;
 
 namespace GACore.Extensions.Test
@@ -15,6 +16,17 @@ namespace GACore.Extensions.Test
 
 			Assert.AreEqual(double.NaN, quantized.X);
 			Assert.AreEqual(2, quantized.Y);
+		}
+
+		[Test]
+		public void QuantizePI()
+		{
+			Point point = new Point(Math.PI, Math.PI);
+
+			Point quantized = point.Quantize(0.001);
+
+			Assert.AreEqual(3.142, quantized.X);
+			Assert.AreEqual(3.142, quantized.Y);
 		}
 
 		[Test]

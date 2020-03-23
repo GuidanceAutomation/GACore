@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.24.1 (23rd Mar 20)
+
+* Quantization bug fix and associated unit test
+
 v1.24.0 (23rd Mar 20)
 
 * Adds IKeyedEnumerable

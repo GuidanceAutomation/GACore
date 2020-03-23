@@ -25,8 +25,8 @@ namespace GACore.Extensions
 
 		public static Point Quantize(this Point point, double quantizeStep)
 		{
-			double x = Math.Round(point.X.Quantize(quantizeStep));
-			double y = Math.Round(point.Y.Quantize(quantizeStep));
+			double x = point.X.Quantize(quantizeStep);
+			double y = point.Y.Quantize(quantizeStep);
 
 			return new Point(x,y);
 		}
