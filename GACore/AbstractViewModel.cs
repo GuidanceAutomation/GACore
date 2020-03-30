@@ -45,8 +45,8 @@ namespace GACore
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		{		
+			PropertyChanged?.BeginInvoke(this, new PropertyChangedEventArgs(propertyName), null, null);
 		}
 	}
 }
