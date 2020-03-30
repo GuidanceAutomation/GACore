@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+1.24.2 (30th Mar 20)
+
+* Makes the invoke, BeginInvoke on AbstractViewModel. Returns control instantly. 
+
 v1.24.1 (23rd Mar 20)
 
 * Quantization bug fix and associated unit test
