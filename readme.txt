@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+1.24.3 (30th Mar 20)
+
+* Trace logs INotifyPropertyChanged for AbstractViewModel
+
 1.24.2 (30th Mar 20)
 
 * Makes the invoke, BeginInvoke on AbstractViewModel. Returns control instantly. 
