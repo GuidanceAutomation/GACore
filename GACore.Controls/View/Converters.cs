@@ -19,30 +19,16 @@ namespace GACore.Controls.View
 			=> throw new NotImplementedException("RadToDegStringConverter ConvertBack()");
 	}
 
-	public class IsInFaultConverter : IValueConverter
+	public class IsVirtualColorConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			IKingpinState kingpinState = value as IKingpinState;
-			if (kingpinState != null) return kingpinState.IsInFault();
-			else return true;
+			bool isVirtual = (bool)value;
+			return isVirtual ? Brushes.Cyan : Brushes.Black;
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-			=> throw new NotImplementedException();
-	}
-
-	public class KingpinStateColorConverter : IValueConverter
-	{
-		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-		{
-			IKingpinState kingpinState = value as IKingpinState;
-			if (kingpinState != null) return kingpinState.IsVirtual ? Brushes.Cyan : Brushes.Black;
-			else return Brushes.Black;
-		}
-
-		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-			=> throw new NotImplementedException("KingpinStateColorConverter ConvertBack()");
+			=> throw new NotImplementedException("IsVirtualColorConverter ConvertBack()");
 	}
 
 	public class DynamicLimiterStatusToOverlayTextConverter : IValueConverter

@@ -38,6 +38,8 @@ namespace GACore
 				newValue == null ? "null" : newValue.ToString());
 		}
 
+		public InvokeBehavior InvokeBehavior { get; set; } = InvokeBehavior.Invoke;
+
 		public AbstractViewModel()
 		{
 		}
@@ -48,7 +50,20 @@ namespace GACore
 		{
 			Logger.Trace("[{0}] OnNotifyPropertyChanged() propertyName:{1}", GetType().Name, propertyName);
 
-			PropertyChanged?.BeginInvoke(this, new PropertyChangedEventArgs(propertyName), null, null);
+			// This should be an invoke becuase we want to tell the view to update, usually on a CompositionTarger.RenderFrame
+			// Doing this as BeginInvoke adds far too many messages to the message queue.
+
+			switch (InvokeBehavior)
+			{
+				case InvokeBehavior.BeginInvoke:
+					PropertyChanged?.BeginInvoke(this, new PropertyChangedEventArgs(propertyName), null, null);
+					break;
+
+				case InvokeBehavior.Invoke:
+				default:
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+					break;
+			}
 		}
 	}
 }

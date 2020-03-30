@@ -58,7 +58,12 @@ namespace GACore.DemoApp
 
 		public string Alias => "Foo Kingpin";
 
-		public bool IsVirtual => Tools.Random.Next(0, 2) > 0;
+		private bool isVirtual = Tools.Random.Next(0, 2) > 0;
+
+		public bool IsVirtual
+		{
+			get { return isVirtual; }
+		}
 
 		public byte Tick => throw new NotImplementedException();
 

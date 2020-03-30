@@ -1,4 +1,7 @@
-﻿namespace GACore.Controls
+﻿using GACore.Architecture;
+using System.Windows.Media;
+
+namespace GACore.Controls
 {
 	public static class ExtensionMethods
 	{

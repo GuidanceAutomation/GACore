@@ -8,6 +8,12 @@
 		Green = 3
 	}
 
+	public enum InvokeBehavior
+	{
+		Invoke = 0,
+		BeginInvoke = 1
+	}
+
 	public enum StandardLogger
 	{
 		ViewModel = 0

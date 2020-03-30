@@ -1,6 +1,4 @@
 ﻿using GACore.Architecture;
-using GACore.Controls.ViewModel;
-using System;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -14,13 +12,20 @@ namespace GACore.Controls.View
 		public KingpinStateView()
 		{
 			InitializeComponent();
-			CompositionTarget.Rendering += CompositionTarget_Rendering;
-		}
 
-		private void CompositionTarget_Rendering(object sender, EventArgs e)
+#if DEBUG
+			CompositionTarget.Rendering += CompositionTarget_Rendering;
+#endif
+		}
+#if DEBUG
+		private void CompositionTarget_Rendering(object sender, System.EventArgs e)
 		{
+#warning assumed parent will do this
+
 			if (DataContext is IRefresh)
 				((IRefresh)DataContext).Refresh();
 		}
+#endif
+
 	}
 }
