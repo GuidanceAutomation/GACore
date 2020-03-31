@@ -8,16 +8,20 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
-1.24.4 (30th Mar 20)
+v1.25.0 (31st Mar 20)
+
+* Adds AbstractCompositionTargetControl
+
+v1.24.4 (30th Mar 20)
 
 * Switchable invoke behavior
 * View bugfixing.
 
-1.24.3 (30th Mar 20)
+v1.24.3 (30th Mar 20)
 
 * Trace logs INotifyPropertyChanged for AbstractViewModel
 
-1.24.2 (30th Mar 20)
+v1.24.2 (30th Mar 20)
 
 * Makes the invoke, BeginInvoke on AbstractViewModel. Returns control instantly. 
 
