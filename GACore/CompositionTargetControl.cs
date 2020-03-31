@@ -5,13 +5,26 @@ using System.Windows.Media;
 
 namespace GACore
 {
-	public abstract class AbstractCompositionTargetControl : UserControl, IDisposable
+	public class CompositionTargetControl : UserControl, IDisposable
 	{
-		public AbstractCompositionTargetControl(byte onFrames = 1)
+		private byte frameCount = 0;
+
+		private bool isDisposed = false;
+
+		public CompositionTargetControl(byte onFrames = 1)
 		{
 			OnFrames = onFrames;
 			CompositionTarget.Rendering += CompositionTarget_Rendering;
 		}
+
+		~CompositionTargetControl()
+		{
+			Dispose(false);
+		}
+
+		public byte OnFrames { get; private set; } = 1;
+
+		public void Dispose() => Dispose(true);
 
 		private void CompositionTarget_Rendering(object sender, EventArgs e)
 		{
@@ -20,15 +33,6 @@ namespace GACore
 
 			frameCount++;
 		}
-
-		private byte frameCount = 0;
-
-		public byte OnFrames { get; private set; } = 1;
-
-		public void Dispose() => Dispose(true);
-
-		private bool isDisposed = false;
-
 		private void Dispose(bool isDisposing)
 		{
 			if (isDisposed) return;

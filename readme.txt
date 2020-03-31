@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+
+v1.25.1 (31st Mar 20)
+
+* AbstractCompositionTargetControl shouldn't be abstract :facepalm:
+
 v1.25.0 (31st Mar 20)
 
 * Adds AbstractCompositionTargetControl
