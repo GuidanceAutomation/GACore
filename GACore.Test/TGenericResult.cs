@@ -11,7 +11,7 @@ namespace GACore.Test
 		[Test]
 		public void Success()
 		{
-			IGenericResult<int> result = new GenericResult<int>(true, 69);
+			IResult<int> result = new Result<int>(true, 69);
 
 			Assert.IsTrue(result.IsSuccessful);
 			Assert.AreEqual(69, result.Value);
@@ -21,7 +21,7 @@ namespace GACore.Test
 		[Test]
 		public void Succces_ArgumentOutOfRangeException()
 		{
-			Assert.Throws<ArgumentOutOfRangeException>(() => new GenericResult<object>(true, null));
+			Assert.Throws<ArgumentOutOfRangeException>(() => new Result<object>(true, null));
 		}
 	}
 }

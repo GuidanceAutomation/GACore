@@ -8,6 +8,9 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.25.2 (6th April 20)
+
+* Fixes embarrassing IGenericResult<T>
 
 v1.25.1 (31st Mar 20)
 

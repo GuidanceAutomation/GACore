@@ -13,7 +13,7 @@ namespace GACore.Test
 			int[] args = { 1, 2, 3 };
 			string expected = string.Format("ohes noes: {0}, {1}, {2}", args[0], args[1], args[2]);
 
-			IGenericResult<int> result = ResultFactory.FromFailure<int>("ohes noes: {0}, {1}, {2}", args[0], args[1], args[2]);
+			IResult<int> result = ResultFactory.FromFailure<int>("ohes noes: {0}, {1}, {2}", args[0], args[1], args[2]);
 
 			StringAssert.AreEqualIgnoringCase(expected, result.FailureReason);
 		}
@@ -30,7 +30,7 @@ namespace GACore.Test
 		[Test]
 		public void ResultFactoryGenericUnkownFailure()
 		{
-			IGenericResult<int> result = ResultFactory.FromUnknownFailure<int>();
+			IResult<int> result = ResultFactory.FromUnknownFailure<int>();
 
 			Assert.IsFalse(result.IsSuccessful);
 			Assert.AreEqual(default(int), result.Value);
@@ -51,7 +51,7 @@ namespace GACore.Test
 		[TestCase("epic fails")]
 		public void ResultFactoryGenericFailure(string failureReason)
 		{
-			IGenericResult<int> result = ResultFactory.FromFailure<int>(failureReason);
+			IResult<int> result = ResultFactory.FromFailure<int>(failureReason);
 
 			Assert.IsFalse(result.IsSuccessful);
 			Assert.AreEqual(default(int), result.Value);
@@ -70,7 +70,7 @@ namespace GACore.Test
 		[Test]
 		public void ResultFactoryGenericSuccess()
 		{
-			IGenericResult<int> result = ResultFactory.FromSuccess<int>(69);
+			IResult<int> result = ResultFactory.FromSuccess<int>(69);
 
 			Assert.IsTrue(result.IsSuccessful);
 			Assert.AreEqual(69, result.Value);

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace GACore
 {
@@ -55,7 +56,7 @@ namespace GACore
 
 				U collectionItemViewModel = new U() { Model = collectionItemModel };
 
-				await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+				await Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.DataBind, new Action(() =>
 				{
 					viewModels.Add(collectionItemViewModel);
 				}));
@@ -76,7 +77,7 @@ namespace GACore
 		{
 			Logger.Trace("[{0}] HandleCollectionRefresh()", GetType().Name);
 
-			await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+			await Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.DataBind, new Action(() =>
 			{
 				viewModels.Clear();
 			}));
@@ -127,7 +128,7 @@ namespace GACore
 					return;
 				}
 
-				await Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+				await Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.DataBind, new Action(() =>
 				{
 					viewModels.Remove(viewModel);
 				}));

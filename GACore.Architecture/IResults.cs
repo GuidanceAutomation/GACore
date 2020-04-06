@@ -14,7 +14,7 @@
 	/// Expands IResult to include a result object
 	/// </summary>
 	/// <typeparam name="T">Default(T) if unsuccessful, cannot be null if successful.</typeparam>
-	public interface IGenericResult<T> : IResult
+	public interface IResult<T> : IResult
 	{
 		T Value { get; }
 	}
