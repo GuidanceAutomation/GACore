@@ -3,6 +3,37 @@
 namespace GACore.Architecture
 {
 	/// <summary>
+	/// MEGA WARNING - The precedence of these is super important do not change the enumerated values.
+	/// </summary>
+	[DataContract]
+	public enum AgentLifetimeState
+	{
+		/// <summary>
+		/// An agent has been decommissioned (e.g. AGV scrapped).
+		/// </summary>
+		[EnumMember]
+		Decommissioned = 0,
+
+		/// <summary>
+		/// An agent is currently not connected to the scheduler
+		/// </summary>
+		[EnumMember]
+		Disconnected = 1,
+
+		/// <summary>
+		/// An agent is connect to the scheduler, but unavailable for work.
+		/// </summary>
+		[EnumMember]
+		OutOfService = 2,
+
+		/// <summary>
+		/// An agent is connected to the scheduler
+		/// </summary>
+		[EnumMember]
+		InService = 3
+	}
+
+	/// <summary>
 	/// Enum to indicate job status.
 	/// </summary>
 	[DataContract]

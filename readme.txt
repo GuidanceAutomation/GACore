@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.25.3 (22nd June 20)
+
+* Adds AgentLifetimeState enumerator
+* Improves result factory
+
 v1.25.2 (6th April 20)
 
 * Fixes embarrassing IGenericResult<T>
