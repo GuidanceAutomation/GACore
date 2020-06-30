@@ -201,7 +201,7 @@ namespace GACore.Architecture
 		ManualLoadHandling = 3, // Manual load handling can occur here
 
 		[EnumMember]
-		Execution = 4 // ALL NODES SUPPORT - a service to send an AGV to this node and peform an execution instruction
+		Execution = 4 // ALL NODES SUPPORT - a service to send an AGV to this node and perform an execution instruction
 	};
 
 	[DataContract]
@@ -310,5 +310,21 @@ namespace GACore.Architecture
 
 		[EnumMember]
 		Unknown = 65535
+	}
+
+	[DataContract]
+	public enum ReleaseFlag
+	{
+		[EnumMember]
+		Alpha = 0, // Internal test / junk
+
+		[EnumMember]
+		Beta = 1, // External test 
+
+		[EnumMember]
+		ReleaseCandidate = 2, // For the testing team
+
+		[EnumMember]
+		Release = 3, // Official release
 	}
 }

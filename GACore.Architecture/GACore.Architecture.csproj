@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerators.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IIPAddressable.cs" />
     <Compile Include="IKeyedEnumerable.cs" />
     <Compile Include="IModelCollection.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="IKingpinStatusReporter.cs" />
     <Compile Include="IRefresh.cs" />
     <Compile Include="IResults.cs" />
+    <Compile Include="ISemVer.cs" />
     <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
