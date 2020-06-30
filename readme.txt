@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.25.5 (30 June 20)
+
+* Moves dtos out to GAAPICommon using NetStandard 2.0
+
 v1.25.4 (30 June 20)
 
 * Unifies sem ver implementations

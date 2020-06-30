@@ -1,11 +1,34 @@
 ﻿using GACore.Architecture;
 using System.Collections.Generic;
 using System.Windows.Media;
+using GAAPICommon.Core.Dtos;
+using System;
 
 namespace GACore
 {
 	public static class ExtensionMethods
 	{
+		private static readonly Dictionary<ReleaseFlag, string> releaseFlagDictionary = new Dictionary<ReleaseFlag, string>()
+		{
+			{ReleaseFlag.Alpha, "Alpha" },
+			{ReleaseFlag.Beta, "Beta" },
+			{ReleaseFlag.ReleaseCandidate, "Release candidate" },
+			{ReleaseFlag.Release, "Release" }
+		};
+
+		public static SemVerDto ToSemVerDto(this ISemVer semVer)
+		{
+			if (semVer == null) throw new ArgumentNullException("semVer");
+
+			return new SemVerDto()
+			{
+				Major = semVer.Major,
+				Minor = semVer.Minor,
+				Patch = semVer.Patch,
+				ReleaseFlag = releaseFlagDictionary[semVer.ReleaseFlag]
+			};
+		}
+
 		public static Color ToColor(this LightState? lightState)
 		{
 			switch (lightState)
