@@ -8,6 +8,12 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.25.4 (30 June 20)
+
+* Unifies sem ver implementations
+* Adds common dtos
+* Adds exception ability to results factory
+
 v1.25.3 (22nd June 20)
 
 * Adds AgentLifetimeState enumerator
