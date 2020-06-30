@@ -73,7 +73,7 @@
     <Compile Include="Tools.cs" />
     <Compile Include="TResult.cs" />
     <Compile Include="TResultFactory.cs" />
-    <Compile Include="TSemVerData.cs" />
+    <Compile Include="TSemVer.cs" />
     <Compile Include="TTrigonometry.cs" />
     <Compile Include="TViewModel.cs" />
   </ItemGroup>
