@@ -1,13 +1,20 @@
 ﻿using GACore.Architecture;
 using System;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("GACore.Test")]
 namespace GACore
 {
 	public class Result : IResult
-	{
-		public Result(bool isSuccessful, string failureReason = default)
+	{	
+		internal Result(Exception ex)
+			: this(false,  ex.Message ?? throw new ArgumentNullException("ex"))
 		{
-			if (isSuccessful && !string.IsNullOrEmpty(failureReason)) throw new ArgumentOutOfRangeException("Can't be succesful and include a failure reason");
+		}
+
+		internal Result(bool isSuccessful, string failureReason = default)
+		{
+			if (isSuccessful && !string.IsNullOrEmpty(failureReason)) throw new ArgumentOutOfRangeException("Can't be successful and include a failure reason");
 
 			if (isSuccessful == false && string.IsNullOrEmpty(failureReason)) failureReason = "Unknown";
 
@@ -27,10 +34,15 @@ namespace GACore
 
 	public class Result<T> : Result, IResult<T>
 	{
-		public Result(bool isSuccessful, T value = default, string failureReason = default)
+		internal Result(Exception ex)
+			: this(false, default, ex.Message ?? throw new ArgumentNullException("ex"))
+		{
+		}
+
+		internal Result(bool isSuccessful, T value = default, string failureReason = default)
 			: base(isSuccessful, failureReason)
 		{
-			if (isSuccessful && value == null) throw new ArgumentOutOfRangeException("Can't be succesful and return a null value");
+			if (isSuccessful && value == null) throw new ArgumentOutOfRangeException("Can't be successful and return a null value");
 
 			Value = isSuccessful ? value : default;
 		}
