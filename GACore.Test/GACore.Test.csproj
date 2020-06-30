@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GAAPICommon.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GAAPICommon.1.0.0\lib\netstandard2.0\GAAPICommon.Core.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.7.0\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -64,6 +67,7 @@
     <Compile Include="Generics\TQuandary.cs" />
     <Compile Include="NLog\TNLogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TExtensionMethods.cs" />
     <Compile Include="TGenericMailbox.cs" />
     <Compile Include="TGenericResult.cs" />
     <Compile Include="TIPAddressRange.cs" />
