@@ -5,6 +5,10 @@ namespace GACore
 {
 	public static class ResultFactory
 	{
+		public static IResult FromException(Exception ex) => new Result(ex);
+
+		public static IResult<T> FromException<T>(Exception ex) => new Result<T>(ex);
+
 		public static IResult FromSuccess() => new Result(true, string.Empty);
 
 		public static IResult<T> FromSuccess<T>(T value) => new Result<T>(true, value);

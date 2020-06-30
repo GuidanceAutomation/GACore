@@ -31,5 +31,17 @@ namespace GACore.Test
 		{
 			Assert.Throws<ArgumentOutOfRangeException>(() => new Result(true, "Metal Gear???"));
 		}
+
+		[Test]
+		public void FromException()
+		{
+			string message = "OHES NOES";
+			Exception ex = new Exception(message);
+
+			IResult result = new Result(ex);
+
+			Assert.IsFalse(result.IsSuccessful);
+			StringAssert.AreEqualIgnoringCase(message, result.FailureReason);
+		}
 	}
 }
