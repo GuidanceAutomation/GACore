@@ -14,7 +14,7 @@
     <tags></tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
-	  	<dependency id="Extended.Wpf.Toolkit" version="4.0.0" />
+	  	<dependency id="Extended.Wpf.Toolkit" version="3.8.2" allowedVersions="[3.8.2]"/>
 		<dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.19"/>
         <dependency id="NLog" version="4.7.2" />
 		<dependency id="morelinq" version="3.3.2" />
