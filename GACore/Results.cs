@@ -1,26 +1,46 @@
 ﻿using GACore.Architecture;
 using System;
+using System.Configuration;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("GACore.Test")]
 namespace GACore
 {
 	public class Result : IResult
-	{	
-		internal Result(Exception ex)
-			: this(false,  ex.Message ?? throw new ArgumentNullException("ex"))
-		{
+	{
+		public static Result FromSuccess() => new Result();
+
+		public static Result FromFailure(string failureReason = default) => new Result(failureReason);
+
+		public static Result FromException(Exception exception) => new Result(exception);
+
+		protected Result()
+        {
+			IsSuccessful = true;
+			FailureReason = string.Empty;
+			Exception = null;
 		}
 
-		internal Result(bool isSuccessful, string failureReason = default)
-		{
-			if (isSuccessful && !string.IsNullOrEmpty(failureReason)) throw new ArgumentOutOfRangeException("Can't be successful and include a failure reason");
+		protected Result(string failureReason)
+        {
+			if (string.IsNullOrEmpty(failureReason))
+				failureReason = "Unknown";
 
-			if (isSuccessful == false && string.IsNullOrEmpty(failureReason)) failureReason = "Unknown";
+			IsSuccessful = false;
+			FailureReason = failureReason;
+			Exception = null;
+        }
 
-			IsSuccessful = isSuccessful;
-			FailureReason = failureReason ?? string.Empty;
-		}
+		protected Result(Exception exception)
+        {
+			if (exception == null) throw new ArgumentNullException("exception");
+
+			IsSuccessful = false;
+			FailureReason = exception.Message;
+			Exception = exception;
+        }
+
+		public Exception Exception { get; } = null;
 
 		public string FailureReason { get; } = string.Empty;
 
@@ -34,20 +54,31 @@ namespace GACore
 
 	public class Result<T> : Result, IResult<T>
 	{
-		internal Result(Exception ex)
-			: this(false, default, ex.Message ?? throw new ArgumentNullException("ex"))
-		{
-		}
+		public static Result<T> FromSuccess(T value) => new Result<T>(value);
 
-		internal Result(bool isSuccessful, T value = default, string failureReason = default)
-			: base(isSuccessful, failureReason)
-		{
-			if (isSuccessful && value == null) throw new ArgumentOutOfRangeException("Can't be successful and return a null value");
+		public static new Result<T> FromFailure(string failureReason = default) => new Result<T>(failureReason);
 
-			Value = isSuccessful ? value : default;
-		}
+		public static new Result<T> FromException(Exception exception) => new Result<T>(exception);
 
-		public T Value { get; }
+		protected Result(T value)
+			:base()
+        {
+			Value = value;
+        }
+
+		protected Result(string failureReason)
+			:base(failureReason)
+        {
+			Value = default;
+        }
+
+		protected Result(Exception exception)
+			:base(exception)
+        {
+			Value = default;
+        }
+
+		public T Value { get; } = default;
 
 		public override string ToResultString() => IsSuccessful ? string.Format("Success: {0}", Value)
 			: string.Format("Failed: {0}", FailureReason);

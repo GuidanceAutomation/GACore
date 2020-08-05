@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v1.25.7 (5th Aug 20)
+
+* Adds Exception to IResult and IResult<T>
+
 v1.25.6 (1st July 20)
 
 * No functional changes, switches to hardcoding Xceed 3.8.2 to get round licence issue for the moment. 
