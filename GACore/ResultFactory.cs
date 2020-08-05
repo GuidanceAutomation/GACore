@@ -5,28 +5,23 @@ namespace GACore
 {
 	public static class ResultFactory
 	{
-		public static IResult FromException(Exception ex) => new Result(ex);
+		public static IResult FromException(Exception ex) => Result.FromException(ex);
 
-		public static IResult<T> FromException<T>(Exception ex) => new Result<T>(ex);
+		public static IResult<T> FromException<T>(Exception ex) => Result<T>.FromException(ex);
 
-		public static IResult FromSuccess() => new Result(true, string.Empty);
+		public static IResult FromSuccess() => Result.FromSuccess();
 
-		public static IResult<T> FromSuccess<T>(T value) => new Result<T>(true, value);
+		public static IResult<T> FromSuccess<T>(T value) => Result<T>.FromSuccess(value); 
 
-		public static IResult FromFailure(string failureReason) => new Result(false, failureReason);
+		public static IResult FromFailure(string failureReason) => Result.FromFailure(failureReason);
 
-		public static IResult FromUnknownFailure() => new Result(false, "Unknown");
+		public static IResult FromUnknownFailure() => Result.FromFailure();
 
-		public static IResult FromFailure(Exception ex)
-		{
-			if (ex == null) return FromUnknownFailure();
+		public static IResult FromFailure(Exception ex) => Result.FromException(ex);
 
-			return FromFailure(ex.Message);
-		}
+		public static IResult<T> FromFailure<T>(string failureReason) => Result<T>.FromFailure(failureReason);
 
-		public static IResult<T> FromFailure<T>(string failureReason) => new Result<T>(false, default(T), failureReason);
-
-		public static IResult<T> FromUnknownFailure<T>() => new Result<T>(false, default(T), "Unknown");
+		public static IResult<T> FromUnknownFailure<T>() => Result<T>.FromFailure();
 
 		public static IResult FromFailure(string format, object arg0)
 			=> FromFailure(string.Format(format, arg0));
@@ -40,11 +35,6 @@ namespace GACore
 		public static IResult<T> FromFailure<T>(string format, params object[] args)
 			=> FromFailure<T>(string.Format(format, args));
 
-		public static IResult FromFailure<T>(Exception ex)
-		{
-			if (ex == null) return FromUnknownFailure<T>();
-
-			return FromFailure<T>(ex.Message);
-		}
+		public static IResult FromFailure<T>(Exception ex) => Result.FromException(ex);
 	}
 }

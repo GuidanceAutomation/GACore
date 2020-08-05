@@ -11,19 +11,12 @@ namespace GACore.Test
 		[TestCase(69)]
 		public void Success<T>(T instance)
 		{
-			IResult<T> result = new Result<T>(true, instance);
+			IResult<T> result = Result<T>.FromSuccess(instance);
 
 			Assert.IsTrue(result.IsSuccessful);
 			Assert.AreEqual(instance, result.Value);
 			StringAssert.AreEqualIgnoringCase(string.Empty, result.FailureReason);
 		}
-
-		[Test]
-		public void Succces_ArgumentOutOfRangeException()
-		{
-			Assert.Throws<ArgumentOutOfRangeException>(() => new Result<object>(true, null));
-		}
-
 
 		[TestCase(66)]
 		[TestCase("Horse")]
@@ -32,7 +25,7 @@ namespace GACore.Test
 			string message = "OHES NOES";
 			Exception ex = new Exception(message);
 
-			IResult<T> result = new Result<T>(ex);
+			IResult<T> result = Result<T>.FromException(ex);
 
 			Assert.IsFalse(result.IsSuccessful);
 			StringAssert.AreEqualIgnoringCase(message, result.FailureReason);

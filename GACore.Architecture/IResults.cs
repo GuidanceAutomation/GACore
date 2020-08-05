@@ -1,4 +1,6 @@
-﻿namespace GACore.Architecture
+﻿using System;
+
+namespace GACore.Architecture
 {
 	/// <summary>
 	/// Lightweight structure to return a failure reason when an operation fails for traceability.
@@ -8,6 +10,8 @@
 		string FailureReason { get; }
 
 		bool IsSuccessful { get; }
+
+		Exception Exception { get; }
 	}
 
 	/// <summary>
