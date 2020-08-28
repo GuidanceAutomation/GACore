@@ -1,4 +1,6 @@
-﻿namespace GACore.Architecture
+﻿using GAAPICommon.Architecture;
+
+namespace GACore.Architecture
 {
 	public interface IKingpinStateReporter
 	{

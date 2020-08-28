@@ -1,4 +1,5 @@
-﻿using GACore.Architecture;
+﻿using GAAPICommon.Architecture;
+using GACore.Architecture;
 using System;
 
 namespace GACore

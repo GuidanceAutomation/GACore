@@ -16,9 +16,9 @@ namespace GACore
 
 			if (background == null) throw new ArgumentNullException("background");
 
-			this.Text = text;
-			this.Foreground = foreground;
-			this.Background = background;
+			Text = text;
+			Foreground = foreground;
+			Background = background;
 		}
 
 		public string ToBrushCollectionString() => string.Format("Text:{0} Foreground:{1} Background:{2}", Text, Foreground, Background);

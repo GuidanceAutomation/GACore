@@ -1,4 +1,5 @@
-﻿using GACore.Architecture;
+﻿using GAAPICommon.Architecture;
+using GACore.Architecture;
 using System;
 using System.Text;
 
@@ -9,31 +10,21 @@ namespace GACore
 	/// </summary>
 	public class KingpinFaultDiagnosis
 	{
-		private readonly PositionControlStatus? pcsFault;
-
-		private readonly ExtendedDataFaultStatus? extendedDataFault;
-
-		private readonly NavigationStatus? navigationFault;
-
-		private readonly DynamicLimiterStatus? dynamicLimiterFault;
-
-		public KingpinFaultDiagnosis(IKingpinState kingpinState)
+        public KingpinFaultDiagnosis(IKingpinState kingpinState)
 		{
 			if (kingpinState == null)
-			{
 				throw new ArgumentNullException("kingpinState");
-			}
 
-			dynamicLimiterFault = kingpinState.DynamicLimiterStatus.IsFault() ?
+			DynamicLimiterFault = kingpinState.DynamicLimiterStatus.IsFault() ?
 				(DynamicLimiterStatus?)kingpinState.DynamicLimiterStatus : null;
 
-			extendedDataFault = kingpinState.ExtendedDataFaultStatus.IsFault() ?
+			ExtendedDataFault = kingpinState.ExtendedDataFaultStatus.IsFault() ?
 				(ExtendedDataFaultStatus?)kingpinState.ExtendedDataFaultStatus : null;
 
-			navigationFault = kingpinState.NavigationStatus.IsFault() ?
+			NavigationFault = kingpinState.NavigationStatus.IsFault() ?
 				(NavigationStatus?)kingpinState.NavigationStatus : null;
 
-			pcsFault = kingpinState.PositionControlStatus.IsFault() ?
+			PCSFault = kingpinState.PositionControlStatus.IsFault() ?
 				(PositionControlStatus?)kingpinState.PositionControlStatus : null;
 		}
 
@@ -42,10 +33,10 @@ namespace GACore
 			unchecked
 			{
 				int hash = 17;
-				hash = hash * 23 + dynamicLimiterFault.GetHashCode();
-				hash = hash * 23 + extendedDataFault.GetHashCode();
-				hash = hash * 23 + navigationFault.GetHashCode();
-				hash = hash * 23 + pcsFault.GetHashCode();
+				hash = hash * 23 + DynamicLimiterFault.GetHashCode();
+				hash = hash * 23 + ExtendedDataFault.GetHashCode();
+				hash = hash * 23 + NavigationFault.GetHashCode();
+				hash = hash * 23 + PCSFault.GetHashCode();
 				return hash;
 			}
 		}
@@ -56,10 +47,10 @@ namespace GACore
 
 			if (other == null) return false;
 
-			return this.dynamicLimiterFault.Equals(other.dynamicLimiterFault)
-				&& this.extendedDataFault.Equals(other.extendedDataFault)
-				&& this.navigationFault.Equals(other.navigationFault)
-				&& this.pcsFault.Equals(other.pcsFault);
+			return DynamicLimiterFault.Equals(other.DynamicLimiterFault)
+				&& ExtendedDataFault.Equals(other.ExtendedDataFault)
+				&& NavigationFault.Equals(other.NavigationFault)
+				&& PCSFault.Equals(other.PCSFault);
 		}
 
 		public string ToDiagnosticString()
@@ -87,12 +78,12 @@ namespace GACore
 		public bool IsInFault() => (PCSFault != null || ExtendedDataFault != null
 			|| NavigationFault != null || DynamicLimiterFault != null);
 
-		public PositionControlStatus? PCSFault => pcsFault;
+        public PositionControlStatus? PCSFault { get; }
 
-		public ExtendedDataFaultStatus? ExtendedDataFault => extendedDataFault;
+        public ExtendedDataFaultStatus? ExtendedDataFault { get; }
 
-		public NavigationStatus? NavigationFault => navigationFault;
+        public NavigationStatus? NavigationFault { get; }
 
-		public DynamicLimiterStatus? DynamicLimiterFault => dynamicLimiterFault;
-	}
+        public DynamicLimiterStatus? DynamicLimiterFault { get; }
+    }
 }
