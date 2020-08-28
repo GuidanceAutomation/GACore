@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using GAAPICommon.Core.Dtos;
 using System;
+using GAAPICommon.Architecture;
 
 namespace GACore
 {
@@ -66,36 +67,5 @@ namespace GACore
 
 			return false;
 		}
-
-		public static bool IsFault(this ExtendedDataFaultStatus exFaultStatus) => ExDataFaultStates.Contains(exFaultStatus);
-
-		public static HashSet<ExtendedDataFaultStatus> ExDataFaultStates { get; } = new HashSet<ExtendedDataFaultStatus>()
-		{
-			ExtendedDataFaultStatus.Fault
-		};
-
-		public static HashSet<DynamicLimiterStatus> DynamicFaultStates { get; } = new HashSet<DynamicLimiterStatus>()
-			{
-				DynamicLimiterStatus.MotorFault
-			};
-
-		public static HashSet<NavigationStatus> NavigationFaultStates { get; } = new HashSet<NavigationStatus>()
-			{
-				NavigationStatus.AssociationFailure,
-				NavigationStatus.HighUncertainty,
-				NavigationStatus.Lost
-			};
-
-		public static HashSet<PositionControlStatus> PCSFaultStates { get; } = new HashSet<PositionControlStatus>()
-			{
-				PositionControlStatus.OutOfPosition,
-				PositionControlStatus.WaypointDiscontinuity
-			};
-
-		public static bool IsFault(this PositionControlStatus positionControlStatus) => PCSFaultStates.Contains(positionControlStatus);
-
-		public static bool IsFault(this NavigationStatus navigationStatus) => NavigationFaultStates.Contains(navigationStatus);
-
-		public static bool IsFault(this DynamicLimiterStatus dynamicLimiterStatus) => DynamicFaultStates.Contains(dynamicLimiterStatus);
 	}
 }

@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GAAPICommon.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GAAPICommon.1.3.0\lib\netstandard2.0\GAAPICommon.Architecture.dll</HintPath>
+    </Reference>
+    <Reference Include="GAAPICommon.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GAAPICommon.1.3.0\lib\netstandard2.0\GAAPICommon.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -43,20 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IIPAddressable.cs" />
     <Compile Include="IKeyedEnumerable.cs" />
     <Compile Include="IModelCollection.cs" />
     <Compile Include="ICollectionViewModel.cs" />
-    <Compile Include="IKingpinState.cs" />
     <Compile Include="IKingpinStateReporter.cs" />
-    <Compile Include="IKingpinStatusReporter.cs" />
     <Compile Include="IRefresh.cs" />
     <Compile Include="IResults.cs" />
     <Compile Include="ISemVer.cs" />
     <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

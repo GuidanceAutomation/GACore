@@ -1,4 +1,5 @@
-﻿using GAAPICommon.Core.Dtos;
+﻿using GAAPICommon.Architecture;
+using GAAPICommon.Core.Dtos;
 using GACore.Architecture;
 using NUnit.Framework;
 

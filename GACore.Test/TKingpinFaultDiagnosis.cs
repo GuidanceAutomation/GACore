@@ -1,5 +1,7 @@
-﻿using GACore.Architecture;
+﻿using GAAPICommon.Architecture;
+using GACore.Architecture;
 using NUnit.Framework;
+using GAAPICommon.Core.Dtos;
 
 namespace GACore.Test
 {
@@ -57,7 +59,7 @@ namespace GACore.Test
 
 		private IKingpinState GetNoFaultState()
 		{
-			return new KingpinStateData()
+			return new KingpinStateDto()
 			{
 				DynamicLimiterStatus = DynamicLimiterStatus.OK,
 				ExtendedDataFaultStatus = ExtendedDataFaultStatus.OK,
@@ -68,7 +70,7 @@ namespace GACore.Test
 
 		private IKingpinState GetMotorLostFault()
 		{
-			return new KingpinStateData()
+			return new KingpinStateDto()
 			{
 				DynamicLimiterStatus = DynamicLimiterStatus.MotorFault,
 				ExtendedDataFaultStatus = ExtendedDataFaultStatus.OK,
@@ -79,7 +81,7 @@ namespace GACore.Test
 
 		private IKingpinState GetMotorFault()
 		{
-			return new KingpinStateData()
+			return new KingpinStateDto()
 			{
 				DynamicLimiterStatus = DynamicLimiterStatus.MotorFault,
 				ExtendedDataFaultStatus = ExtendedDataFaultStatus.OK,
