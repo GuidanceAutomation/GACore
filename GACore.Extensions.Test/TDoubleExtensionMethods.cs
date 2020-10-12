@@ -7,7 +7,6 @@ namespace GACore.Extensions.Test
 	[Category("ExtensionMethods")]
 	public class TDouble_ExtensionMethods
 	{
-		[Test]
 		[TestCase(0, 1, 0)]
 		[TestCase(0, 0.5, 0)]
 		[TestCase(0.4, 0.5, 0.5)]
@@ -20,13 +19,50 @@ namespace GACore.Extensions.Test
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test]
 		[TestCase(0, 0)]
 		[TestCase(Math.PI, Math.PI)]
 		[TestCase(3 * Math.PI, Math.PI)]
 		public void PiWrap(double value, double expected)
 		{
 			Assert.AreEqual(expected, value.PiWrap());
+		}
+
+		[Test]
+		public void PiWrap_DoubleMinValue()
+        {
+			double value = double.MinValue;
+			double wrapped = value.PiWrap();
+
+			Assert.That(wrapped, Is.EqualTo(0).Within(Math.PI));
+			Assert.AreEqual(0, wrapped);
+        }
+
+		[Test]
+		public void PiWrap_DoubleMaxValue()
+		{
+			double value = double.MaxValue;
+			double wrapped = value.PiWrap();
+
+			Assert.That(wrapped, Is.EqualTo(0).Within(Math.PI));
+			Assert.AreEqual(0, wrapped);
+		}
+
+		[TestCase(1e300)]
+		[TestCase(-1e300)]
+		public void PiWrap_LargeValues(double value)
+        {
+			double wrapped = value.PiWrap();
+
+			Assert.That(wrapped, Is.EqualTo(0).Within(Math.PI));
+		}
+
+		[TestCase(1e10)]
+		[TestCase(-1e10)]
+		public void PiWrap_MidValues(double value)
+		{
+			double wrapped = value.PiWrap();
+
+			Assert.That(wrapped, Is.EqualTo(0).Within(Math.PI));
 		}
 	}
 }

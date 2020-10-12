@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 
 namespace GACore
 {
@@ -26,12 +27,18 @@ namespace GACore
 		/// </summary>
 		public static double PiWrap(double angle)
 		{
-			int numRevs = (int)(angle / (2.0d * Math.PI));
-			angle -= (double)numRevs * 2.0d * Math.PI;
+			if (double.IsNaN(angle))
+				return double.NaN;
 
-			if (angle > Math.PI) angle -= 2.0d * Math.PI;
+			double numRevs = Math.Round(angle / (2.0d * Math.PI));
 
-			if (angle <= -Math.PI) angle += 2.0d * Math.PI;
+			angle -= numRevs * 2.0d * Math.PI;
+
+			if (angle > Math.PI) 
+				angle -= 2.0d * Math.PI;
+
+			if (angle <= -Math.PI) 
+				angle += 2.0d * Math.PI;
 
 			return angle;
 		}
