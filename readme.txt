@@ -14,7 +14,7 @@ v1.25.7 (5th Aug 20)
 
 v1.25.6 (1st July 20)
 
-* No functional changes, switches to hardcoding Xceed 3.8.2 to get round licence issue for the moment. 
+* No functional changes, switches to hardcoding Xceed 3.8.2 to get round license issue for the moment. 
 
 v1.25.5 (30th June 20)
 
