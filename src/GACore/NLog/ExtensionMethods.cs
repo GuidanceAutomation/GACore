@@ -11,7 +11,8 @@ namespace GACore.NLog
 		{
 			string filePath = logger.GetFilePath();
 
-			if (!string.IsNullOrEmpty(filePath)) Process.Start(filePath);
+			if (!string.IsNullOrEmpty(filePath)) 
+				Process.Start(filePath);
 		}
 
 		public static string GetFilePath(this Logger logger)
