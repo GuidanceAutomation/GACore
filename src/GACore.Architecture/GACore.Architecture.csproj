@@ -56,7 +56,7 @@
     <Compile Include="ICollectionViewModel.cs" />
     <Compile Include="IKingpinStateReporter.cs" />
     <Compile Include="IRefresh.cs" />
-    <Compile Include="IRestartable.cs" />
+    <Compile Include="IRestartRequestable.cs" />
     <Compile Include="IResults.cs" />
     <Compile Include="ISemVer.cs" />
     <Compile Include="IViewModel.cs" />
