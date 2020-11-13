@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.2.0 (13th Nov 20)
+
+* Adds IVersionable
+
 v2.1.0 (13th Nov 20)
 
 * Add IRestartRequestable

@@ -59,6 +59,7 @@
     <Compile Include="IRestartRequestable.cs" />
     <Compile Include="IResults.cs" />
     <Compile Include="ISemVer.cs" />
+    <Compile Include="IVersionable.cs" />
     <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
