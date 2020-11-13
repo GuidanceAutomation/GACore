@@ -8,10 +8,18 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
-v1.26.0 (13th Nov 20)
+v2.1.0 (13th Nov 20)
 
 * Add IRestartRequestable
 * Sorts out project solution folders
+
+v2.0.1 (12th Oct 20)
+
+* PiWrap bugfix for feeding in large numbers, I.e. 1e300.
+
+v2.0.0 (28th Aug 20)
+
+* Strips out the IKingpinState and its dto (formerly KingpinStateData) to the GAAPICommon assembly as this .net standard and can be integrated into .net core components.
 
 v1.25.7 (5th Aug 20)
 
