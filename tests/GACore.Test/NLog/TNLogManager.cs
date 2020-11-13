@@ -19,8 +19,6 @@ namespace GACore.Test.NLog
 			Logger logger = manager.GetFileTargetLogger("TNLogManager_GetFileTargetLogger");
 
 			logger.WriteValidateLoglevels();
-			logger.StartFilePathLoggerProcess();
-
 			Assert.IsTrue(File.Exists(logger.GetFilePath()));
 		}
 	}
