@@ -24,10 +24,10 @@
   </metadata>
   <files>
         <file src="readme.txt" target="" />
-		<file src="GACore\bin\Release\GACore.dll" target="lib\net472" />
-		<file src="GACore.Architecture\bin\Release\GACore.Architecture.dll" target="lib\net472" />
-		<file src="GACore.Controls\bin\Release\GACore.Controls.dll" target="lib\net472" />
-		<file src="GACore.Extensions\bin\Release\GACore.Extensions.dll" target="lib\net472" />
-		<file src="GACore.UI\bin\Release\GACore.UI.dll" target="lib\net472" />
+		<file src="src\GACore\bin\Release\GACore.dll" target="lib\net472" />
+		<file src="src\GACore.Architecture\bin\Release\GACore.Architecture.dll" target="lib\net472" />
+		<file src="src\GACore.Controls\bin\Release\GACore.Controls.dll" target="lib\net472" />
+		<file src="src\GACore.Extensions\bin\Release\GACore.Extensions.dll" target="lib\net472" />
+		<file src="src\GACore.UI\bin\Release\GACore.UI.dll" target="lib\net472" />
   </files>
 </package>
