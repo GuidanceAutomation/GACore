@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.2.1 (6th Dec 20)
+
+* Fixes binding error on KingpinStateView
+
 v2.2.0 (13th Nov 20)
 
 * Adds IVersionable
