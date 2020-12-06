@@ -162,7 +162,9 @@ namespace GACore.DemoApp
 
 		public TimeSpan Stationary => throw new NotImplementedException();
 
-		public event PropertyChangedEventHandler PropertyChanged;
+        public byte[] CurrentWaypointExtendedData => throw new NotImplementedException();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 		private void OnNotifyPropertyChanged([CallerMemberName] String propertyName = "")
 		{
