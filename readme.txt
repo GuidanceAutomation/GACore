@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.2.2 (6th Dec 20)
+
+* Remove duplicate IsInFault() ex method (now in GAAPICommon).
+
 v2.2.1 (6th Dec 20)
 
 * Fixes binding error on KingpinStateView

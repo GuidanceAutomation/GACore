@@ -43,16 +43,16 @@ namespace GACore.Controls.ViewModel
 			}
 		}
 
-		private MovementType movementType = MovementType.Stationary;
+		private MovementType currentMovementType = MovementType.Stationary;
 
-		public MovementType MovementType
+		public MovementType CurrentMovementType
 		{
-			get { return movementType; }
+			get { return currentMovementType; }
 			private set
 			{
-				if (movementType != value)
+				if (currentMovementType != value)
 				{
-					movementType = value;
+					currentMovementType = value;
 					OnNotifyPropertyChanged();
 				}
 			}
@@ -130,7 +130,7 @@ namespace GACore.Controls.ViewModel
 				ipAddress = toProcess.IPAddress;
 				IsVirtual = toProcess.IsVirtual;
 
-				MovementType = toProcess.CurrentMovementType;
+				CurrentMovementType = toProcess.CurrentMovementType;
 
 				X = toProcess.X;
 				Y = toProcess.Y;
@@ -147,7 +147,7 @@ namespace GACore.Controls.ViewModel
 				IPAddress = null;
 				IsVirtual = false;
 
-				MovementType = MovementType.Stationary;
+				CurrentMovementType = MovementType.Stationary;
 
 				X = float.NaN;
 				Y = float.NaN;

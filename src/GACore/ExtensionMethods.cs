@@ -50,22 +50,10 @@ namespace GACore
 
 		public static BrushCollection GetBrushCollection<T>(this Dictionary<T, BrushCollection> dictionary, T key)
 		{
-			if (dictionary.ContainsKey(key)) return dictionary[key];
+			if (dictionary.ContainsKey(key))
+				return dictionary[key];
 
 			return new BrushCollection("Unknown", Brushes.Crimson, Brushes.White);
-		}
-
-		public static bool IsInFault(this IKingpinState kingpinState)
-		{
-			if (kingpinState.PositionControlStatus.IsFault()) return true;
-
-			if (kingpinState.NavigationStatus.IsFault()) return true;
-
-			if (kingpinState.DynamicLimiterStatus.IsFault()) return true;
-
-			if (kingpinState.ExtendedDataFaultStatus.IsFault()) return true;
-
-			return false;
 		}
 	}
 }
