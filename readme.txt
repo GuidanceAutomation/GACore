@@ -8,6 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.3.0 (12th Jan 21)
+
+* Adds functionality to get FleetManagementMetadata from the registry.
+* Adds generic DialogShutdownMessage
+
 v2.2.2 (6th Dec 20)
 
 * Remove duplicate IsInFault() ex method (now in GAAPICommon).

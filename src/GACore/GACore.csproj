@@ -65,6 +65,7 @@
     <Compile Include="AbstractViewModel.cs" />
     <Compile Include="BrushCollection.cs" />
     <Compile Include="Command\CustomCommand.cs" />
+    <Compile Include="FleetManagementMetadata.cs" />
     <Compile Include="KeyedEnumerable.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Enumerators.cs" />
