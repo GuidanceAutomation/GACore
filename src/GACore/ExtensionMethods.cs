@@ -17,6 +17,18 @@ namespace GACore
 			{ReleaseFlag.Release, "Release" }
 		};
 
+		public static FleetManagementMetadataDto ToFleetManagementMetadataDto(this FleetManagementMetadata metadata)
+        {
+			if (metadata == null)
+				throw new ArgumentNullException(nameof(metadata));
+
+			return new FleetManagementMetadataDto()
+			{
+				ProductName = metadata.ProductName,
+				SemVer = metadata.Version.ToSemVerDto()
+			};
+        }
+
 		public static SemVerDto ToSemVerDto(this ISemVer semVer)
 		{
 			if (semVer == null) throw new ArgumentNullException("semVer");
