@@ -73,7 +73,7 @@ namespace GACore
 			}
 		}
 
-		private async void HandleCollectionRefresh()
+		protected async void HandleCollectionRefresh()
 		{
 			Logger.Trace("[{0}] HandleCollectionRefresh()", GetType().Name);
 
