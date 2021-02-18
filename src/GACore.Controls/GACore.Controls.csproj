@@ -78,6 +78,9 @@
     <Compile Include="Converters.cs" />
     <Compile Include="Enumerators.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IPAddressControl.xaml.cs">
+      <DependentUpon>IPAddressControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IPV4Control.xaml.cs">
       <DependentUpon>IPV4Control.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="IPAddressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IPV4Control.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

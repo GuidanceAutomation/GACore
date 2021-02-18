@@ -1,10 +1,90 @@
 ﻿using System;
 using System.Globalization;
+using System.Net;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
 namespace GACore.Controls
 {
+	/// <summary>
+	/// If object is null, visibility is collapsed.
+	/// bool parameter can be used to invert behavior (default = false)
+	/// </summary>
+	public class NullToCollapsedVisibiltyConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			bool invert = false;
+
+			if (parameter is bool)			
+				invert = (bool)parameter;
+
+			if (invert)			
+				return value == null 
+					? Visibility.Visible
+					: Visibility.Collapsed;
+			else
+			{
+				return value == null
+					? Visibility.Collapsed
+					: Visibility.Visible;
+			}
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	/// <summary>
+	/// If object is null, visibility is hidden.
+	/// bool parameter can be used to invert behavior (default = false)
+	/// </summary>
+	public class NullToHiddenVisibiltyConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			bool invert = false;
+
+			if (parameter is bool)			
+				invert = (bool)parameter;
+
+			if (invert)			
+				return value == null 
+					? Visibility.Visible
+					: Visibility.Hidden;			
+			else			
+				return value == null 
+					? Visibility.Hidden 
+					: Visibility.Visible;			
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	internal class IPAddressToByteConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			IPAddress ipAddress = (IPAddress)value;
+
+			byte[] bytes = ipAddress.GetAddressBytes();
+			int index = int.Parse((string)parameter);
+
+			return bytes[index];
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
 	internal class IsTrueColorConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

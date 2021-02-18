@@ -8,7 +8,11 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
-v2.4.0 (1th Feb 21)
+v2.5.0 (18th Feb 21)
+
+* Adds another legacy control, the IPAddressControl which again is from GAWPFCore and no-longer supported. 
+
+v2.4.0 (18th Feb 21)
 
 * Adds the (largely defunct) IsTrueCircleControl, which is legacy in GAWPFCore package and no-longer supported. 
 
