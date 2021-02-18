@@ -1,14 +1,34 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using System.Windows.Media;
 
 namespace GACore.Controls
 {
+	internal class IsTrueColorConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			bool isTrue = (bool)value;
+
+			return isTrue 
+				? (SolidColorBrush)(new BrushConverter().ConvertFrom("#C4D92E"))
+				: Brushes.Gray;
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
 	public class NullableEnumStringConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			return value == null ? "null" : value.ToString();
+			return value == null 
+				? "null" 
+				: value.ToString();
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

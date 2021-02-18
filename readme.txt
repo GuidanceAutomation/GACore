@@ -8,6 +8,18 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.4.0 (1th Feb 21)
+
+* Adds the (largely defunct) IsTrueCircleControl, which is legacy in GAWPFCore package and no-longer supported. 
+
+v2.3.2 (29th Jan 21)
+
+* Allows derived classes to trigger the handle collection refresh for AbstractCollectionViewModel. 
+
+v2.3.1 (15th Jan 21)
+
+* Add ToFleetManagementMetadataDto() extension for FleetManagementMetaData
+
 v2.3.0 (12th Jan 21)
 
 * Adds functionality to get FleetManagementMetadata from the registry.
