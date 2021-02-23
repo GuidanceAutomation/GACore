@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.5.1 (23rd Feb 21)
+
+* Style sheet updates
+
 v2.5.0 (18th Feb 21)
 
 * Adds another legacy control, the IPAddressControl which again is from GAWPFCore and no-longer supported. 
