@@ -12,11 +12,6 @@
         Title="GACore DemoApp" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonControls.xaml" />
-            </ResourceDictionary.MergedDictionaries>
             <local:FooCallButton x:Key="fooCallButton" />
             <local:FooKingpin x:Key="fooKingpin" />
             <local:FooIPAddressable x:Key="fooIPAddressable" />

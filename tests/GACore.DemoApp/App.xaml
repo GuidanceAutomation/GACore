@@ -4,5 +4,12 @@
              xmlns:local="clr-namespace:GACore.DemoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/BannerQ45.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/Themes/RibbonControls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

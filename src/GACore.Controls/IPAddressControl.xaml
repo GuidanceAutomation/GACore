@@ -10,9 +10,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
             <local:IPAddressToByteConverter x:Key="ipAddressToByteConverter" />
             <Style TargetType="{x:Type toolkit:IntegerUpDown}">
                 <Setter Property="Height" Value="23" />

@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GACore.Controls"
                     xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
-                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+                    xmlns:media="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!-- Font Sizes-->
     <system:Double x:Key="Text">14</system:Double>
     <!-- Color Palete -->
@@ -22,17 +24,17 @@
     <Style TargetType="{x:Type Control}" x:Key="BaseControlStyle">
         <Setter Property="FontFamily" Value="Calibri" />
         <Setter Property="FontSize" Value="{StaticResource Text}" />
-        <Setter Property="Margin" Value="6" />
+        <Setter Property="Margin" Value="6" /> 
     </Style>
     <Style TargetType="{x:Type ContentControl}" x:Key="BaseContentControlStyle">
-        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontFamily" Value="Calibri" /> 
         <Setter Property="FontSize" Value="{StaticResource Text}" />
         <Setter Property="Margin" Value="6" />
     </Style>
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
-        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontFamily" Value="Calibri" /> 
         <Setter Property="FontSize" Value="{StaticResource Text}" />
-        <Setter Property="Margin" Value="6" />
+        <Setter Property="Margin" Value="6" /> 
     </Style>
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}">
     </Style>
@@ -42,7 +44,7 @@
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseControlStyle}">
         <Setter Property="Height" Value="23" />
         <Setter Property="Width" Value="75" />
-    </Style>
+    </Style> 
     <Style TargetType="local:LabelContentControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -97,4 +99,11 @@
     <Style x:Key="Dialog" TargetType="{x:Type Window}">
         <Setter Property="Icon" Value="pack://application:,,,/GACore.Controls;component/Resources/A_Green.ico"/>
     </Style>
+    <DataTemplate DataType="{x:Type sys:String}">
+        <TextBlock Text="{Binding}">
+            <TextBlock.Resources>
+                <Style TargetType="{x:Type TextBlock}"/>
+            </TextBlock.Resources>
+        </TextBlock>
+    </DataTemplate>
 </ResourceDictionary>

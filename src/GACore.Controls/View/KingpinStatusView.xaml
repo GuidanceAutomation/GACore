@@ -9,9 +9,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
             <local:PositionControlStatusToOverlayTextConverter x:Key="pcsConverter" />
             <local:NavigationStatusToOverlayTextConverter x:Key="nsConverter" />
             <local:DynamicLimiterStatusToOverlayTextConverter x:Key="dlsConverter" />

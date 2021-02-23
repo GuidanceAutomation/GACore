@@ -9,9 +9,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/GACore.Controls;component/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
             <local:IsVirtualColorConverter x:Key="isVirtualColorConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
