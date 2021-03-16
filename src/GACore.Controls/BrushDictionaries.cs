@@ -33,7 +33,8 @@ namespace GACore.Controls
             { NavigationStatus.AssociationFailure, new BrushCollection("Association Failure", Brushes.Black, Brushes.Crimson) },
             { NavigationStatus.HighUncertainty, new BrushCollection("High Uncertainty", Brushes.Black, Brushes.Orange) },
             { NavigationStatus.PoorAssociaton, new BrushCollection("Poor Association", Brushes.Black, Brushes.Yellow) },
-            { NavigationStatus.NoResponse, new BrushCollection("No Response", Brushes.Black, Brushes.Crimson) }
+            { NavigationStatus.NoResponse, new BrushCollection("No Response", Brushes.Black, Brushes.Crimson) },
+            { NavigationStatus.NoScannerData, new BrushCollection("No Scanner Data", Brushes.Black, Brushes.Crimson) }
         };
     }
 }

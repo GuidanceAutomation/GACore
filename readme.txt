@@ -8,6 +8,10 @@
 https://github.com/GuidanceAutomation/GACore
 https://www.guidanceautomation.com/
 
+v2.5.2 (16th Mar 21)
+
+* Adds No Scanner Data brush dictionary value.
+
 v2.5.1 (23rd Feb 21)
 
 * Style sheet updates
